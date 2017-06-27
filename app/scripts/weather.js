@@ -6,7 +6,7 @@ $(document).ready(function() {
   /* Making an AJAX call to the OpenSourceWeather API */
   $('.search button').on('click', function(e){
     e.preventDefault();
-    $('.container.first').addClass('push-up');
+    $('.container.first').animate({'margin-top': ;}, speed);
     $('.search h1').css('font-size', '35px');
     $('.search form').css('margin-top', '20px');
     var search = $('.search .form-control').val();
