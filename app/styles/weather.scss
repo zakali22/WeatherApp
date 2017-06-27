@@ -86,14 +86,39 @@ body {
     margin-left: 50px;
 }
 
-/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main {
     transition: margin-left .5s;
     padding: 20px;
 }
 
-.widget .col-sm-6{
+.widget {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  position: relative;
+  top: -100px;
+}
+
+.widget .thumbnail{
   background-color: #ffa07a;
+  border: 3px solid white;
+  padding: 30px;
+  border-radius: 30px;
+}
+
+.widget .outer {
+  width: 100%;
+}
+
+#name {
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.push-up {
+  position: relative;
+  top: -220px;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
