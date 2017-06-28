@@ -29,7 +29,7 @@ $(document).ready(function() {
         text += '<div class="thumbnail">';
         //text += '<img src="http://openweathermap.org/img/w/10d.png" alt="...">';
         text += '<div class="caption">';
-          text += '<h3 id="name">' + data.name +'</h3>';
+          text += '<h3 id="name">' + data.name +', ' + data.sys.country + '</h3>';
           text += '<div class="row">';
             text += '<div class="col-md-4">';
               text += '<h1 id="temp">' + (data.main.temp - 273.15).toFixed() + ' &deg;</h1>';
@@ -44,11 +44,14 @@ $(document).ready(function() {
             } else if (data.weather[0].main === "Snow") {
               text += '<img src="images/snow.png" width="70px" height="70px"/>';
             } else {
-              text += '<img src="images/cloud.svg" width="70px" height="70px"/>';
+              text += '<img src="images/cloud.png" width="70px" height="70px"/>';
             }
             text += '</div>';
+            text += '<div class="col-md-4">';
+              text += '<h2>' + (data.wind.speed * 2.23694).toFixed()  + 'mph</h2>';
+            text += '</div>';
           text += '</div>';
-          text += '<h1>' + weekday[d.getDay()] + " " +  d.getDate() +  '<sup>th</sup></h1>';
+          text += '<h1 id="day">' + weekday[d.getDay()] + " " +  d.getDate() +  '<sup>th</sup></h1>';
         text += '</div>';
         text += '</div>';
         text += '</div>';
