@@ -25,16 +25,16 @@ $(document).ready(function() {
       /*optional stuff to do after success */
       console.log(data);
       var text = '';
-        text += '<div class="col-sm-6 col-md-4 outer">';
+        text += '<div class="col-sm-12 col-md-4 outer">';
         text += '<div class="thumbnail">';
         //text += '<img src="http://openweathermap.org/img/w/10d.png" alt="...">';
         text += '<div class="caption">';
           text += '<h3 id="name">' + data.name +', ' + data.sys.country + '</h3>';
           text += '<div class="row">';
-            text += '<div class="col-md-4">';
+            text += '<div class="col-sm-6 col-md-4">';
               text += '<h1 id="temp">' + (data.main.temp - 273.15).toFixed() + ' &deg;</h1>';
             text += '</div>';
-            text += '<div class="col-md-4">';
+            text += '<div class="col-sm-6 col-md-4">';
             if(data.weather[0].main === "Rain"){
               text += '<img src="images/rain.png" width="70px" height="70px"/>';
             } else if (data.weather[0].main === "Clear") {
@@ -47,7 +47,7 @@ $(document).ready(function() {
               text += '<img src="images/cloud.png" width="70px" height="70px"/>';
             }
             text += '</div>';
-            text += '<div class="col-md-4">';
+            text += '<div class="col-sm-6 col-md-4">';
               text += '<h2>' + (data.wind.speed * 2.23694).toFixed()  + 'mph</h2>';
             text += '</div>';
           text += '</div>';
