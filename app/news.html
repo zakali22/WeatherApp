@@ -52,9 +52,17 @@
 
     <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
     <div id="main">
-      <div class="container">
+      <div class="container-fluid">
+        <div class="nav">
+          <ul>
+            <li>Politics</li>
+            <li>Entertainment</li>
+            <li>Sports</li>
+            <li>Tech</li>
+            <li>Science</li>
+          </ul>
+        </div>
         <div class="row articles">
-
         </div>
       </div>
     </div>
@@ -95,6 +103,7 @@
 
     <!-- build:js scripts/main.js -->
     <script src="scripts/news.js"></script>
+    <script src="scripts/jquery.dotdotdot.js" type="text/javascript"></script>
     <!-- endbuild -->
   </body>
 </html>

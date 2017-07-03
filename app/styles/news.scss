@@ -4,18 +4,19 @@ $icon-font-path: '../fonts/';
 // endbower
 
 @import url('https://fonts.googleapis.com/css?family=Limelight|Changa+One|Jaldi|Oxygen');
+@import url('https://fonts.googleapis.com/css?family=Cabin|Inconsolata|Nunito|Nunito+Sans|Pacifico|Quicksand|Rubik|VT323');
 
 body {
   background-color: #5cc7b2;
 }
 
 
-.container {
-  display: block;
-  width: 80%;
-  margin: 0 auto;
-  //border: 1px solid white;
+.container-fluid {
   margin-top: 150px;
+}
+
+.articles {
+  margin-left: 350px;
 }
 
 .navicon {
@@ -81,33 +82,42 @@ body {
 .art {
   background-color: white;
   color: black;
-  margin-bottom: 90px;
-  border-radius: 15px;
+  width: 70%;
+  margin-bottom: 50px;
   padding-bottom: 30px;
+  height: 50%;
 }
+
 
 .art h1 {
   text-align: center;
-  margin-bottom: 90px;
+  margin-bottom: 30px;
   font-size: 30px;
+  font-family: 'Nunito', sans-serif;
 }
 
 .art h3 {
-  width: 90%;
-  margin: 0 auto;
-  font-size: 25px;
+  width: 100%;
+  font-size: 22px;
+  position: relative;
+  top: -10px;
+  font-family: 'Quicksand', sans-serif;
 }
 
 .art img {
-  max-width: 100%;
-  max-height: 100%;
   position: relative;
-  left: -30px;
-  border-radius: 10px;
+  top: 20px;
 }
+
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
+}
+
+@media screen and (max-width: 1650px) {
+  .art  {
+    height: 50%;
+  }
 }

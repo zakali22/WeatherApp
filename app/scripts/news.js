@@ -3,24 +3,29 @@ $(document).ready(function() {
     console.log( "Load was performed." );
   });
 
-  $.getJSON('https://newsapi.org/v1/sources?language=en',
-    function(data) {
-      /*optional stuff to do after success */
-      $.each(data.sources, function(index, val) {
-        $.getJSON('https://newsapi.org/v1/articles?source=' + val.id + '&sortBy=top&apiKey=14613ad2a71d44acb0e4cab6cef1c265',
+    $.getJSON('https://newsapi.org/v1/sources?language=en&category=general', function(data) {
+        /*optional stuff to do after success */
+        var sourceArr = [];
+        var random = parseInt(Math.floor((Math.random() * 23) + 0));
+        console.log(data);
+        $.each(data.sources, function(index, val) {
+          sourceArr.push(val.id);
+        });
+        console.log(sourceArr);
+
+        $.getJSON('https://newsapi.org/v1/articles?source=' + sourceArr[random] +'&sortBy=top&apiKey=14613ad2a71d44acb0e4cab6cef1c265',
           function(data) {
             /*optional stuff to do after success */
-            console.log(data.articles);
             var output = '';
             $.each(data.articles, function(index, val) {
               output += '<div class="art col-md-12">';
-                output += '<h1>' + val.title + '</h1>';
                 output += '<div class="row">';
-                  output += '<div class="col-md-8">';
-                    output += '<h3>' + val.description + '</h3>';
+                  output += '<div class="col-md-6">';
+                    output += '<h1>' + val.title + '</h1>';
+                    output += '<h3 class="collapsable">' + val.description + '</h3>';
                   output += '</div>';
-                  output += '<div class="col-md-4">';
-                    output += '<img src="' + val.urlToImage + '"/>';
+                  output += '<div class="col-md-6">';
+                    output += '<img class="img-responsive" src="' + val.urlToImage + '"/>';
                   output += '</div>';
                 output += '</div>';
               output += '</div>';
@@ -28,6 +33,5 @@ $(document).ready(function() {
             });
             $('.articles').html(output);
         });
-      });
-  });
+    });
 });
