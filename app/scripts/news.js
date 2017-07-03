@@ -1,6 +1,6 @@
 $(document).ready(function() {
-    $.getScript( "scripts/main.js", function( data, textStatus, jqxhr ) {
-    console.log( "Load was performed." );
+    $.getScript( 'scripts/main.js', function( data, textStatus, jqxhr ) {
+    console.log( 'Load was performed.' );
   });
 
     $.getJSON('https://newsapi.org/v1/sources?language=en&category=general', function(data) {

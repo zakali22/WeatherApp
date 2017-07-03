@@ -1,18 +1,18 @@
 $(document).ready(function() {
-    $.getScript( "scripts/main.js", function( data, textStatus, jqxhr ) {
-    console.log( "Load was performed." );
+    $.getScript( 'scripts/main.js', function( data, textStatus, jqxhr ) {
+    console.log( 'Load was performed.' );
   });
   /* Making an AJAX call to the OpenSourceWeather API */
   $('.search button').on('click', function(e){
     var d = new Date();
     var weekday = new Array(7);
-    weekday[0] =  "Sunday";
-    weekday[1] = "Monday";
-    weekday[2] = "Tuesday";
-    weekday[3] = "Wednesday";
-    weekday[4] = "Thursday";
-    weekday[5] = "Friday";
-    weekday[6] = "Saturday";
+    weekday[0] =  'Sunday';
+    weekday[1] = 'Monday';
+    weekday[2] = 'Tuesday';
+    weekday[3] = 'Wednesday';
+    weekday[4] = 'Thursday';
+    weekday[5] = 'Friday';
+    weekday[6] = 'Saturday';
 
 
     e.preventDefault();
@@ -20,7 +20,7 @@ $(document).ready(function() {
     $('.search h1').css('font-size', '35px');
     $('.search form').css('margin-top', '20px');
     var search = $('.search .form-control').val();
-    $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=" + search + "&APPID=17f62b6dbcccbfc5051fd5af0e7a8c05",
+    $.getJSON('http://api.openweathermap.org/data/2.5/weather?q=' + search + '&APPID=17f62b6dbcccbfc5051fd5af0e7a8c05',
     function(data) {
       /*optional stuff to do after success */
       console.log(data);
@@ -35,13 +35,13 @@ $(document).ready(function() {
               text += '<h1 id="temp">' + (data.main.temp - 273.15).toFixed() + ' &deg;</h1>';
             text += '</div>';
             text += '<div class="col-sm-6 col-md-4">';
-            if(data.weather[0].main === "Rain"){
+            if(data.weather[0].main === 'Rain'){
               text += '<img src="images/rain.png" width="70px" height="70px"/>';
-            } else if (data.weather[0].main === "Clear") {
+            } else if (data.weather[0].main === 'Clear') {
               text += '<img src="images/sun.png" width="70px" height="70px"/>';
-            } else if (data.weather[0].main === "Thunderstorm") {
+            } else if (data.weather[0].main === 'Thunderstorm') {
               text += '<img src="images/thunder.png" width="70px" height="70px"/>';
-            } else if (data.weather[0].main === "Snow") {
+            } else if (data.weather[0].main === 'Snow') {
               text += '<img src="images/snow.png" width="70px" height="70px"/>';
             } else {
               text += '<img src="images/cloud.png" width="70px" height="70px"/>';
@@ -51,7 +51,7 @@ $(document).ready(function() {
               text += '<h2>' + (data.wind.speed * 2.23694).toFixed()  + 'mph</h2>';
             text += '</div>';
           text += '</div>';
-          text += '<h1 id="day">' + weekday[d.getDay()] + " " +  d.getDate() +  '<sup>th</sup></h1>';
+          text += '<h1 id="day">' + weekday[d.getDay()] + ' ' +  d.getDate() +  '<sup>th</sup></h1>';
         text += '</div>';
         text += '</div>';
         text += '</div>';
