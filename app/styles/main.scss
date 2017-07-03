@@ -3,7 +3,8 @@ $icon-font-path: '../fonts/';
 @import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 // endbower
 
-@import url('https://fonts.googleapis.com/css?family=Limelight|Changa+One|Jaldi|Oxygen');
+@import url('https://fonts.googleapis.com/css?family=Limelight|Changa+One|Jaldi|Oxygen|Source+Code+Pro');
+@import url('https://fonts.googleapis.com/css?family=Cabin|Inconsolata|Nunito|Nunito+Sans|Pacifico|Quicksand|Rubik|VT323');
 
 body {
   background-color: #ffcc00;
@@ -15,6 +16,31 @@ body {
   margin: 0 auto;
   //border: 1px solid white;
   margin-top: 250px;
+}
+
+.logo {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin-right: 25px;
+  margin-bottom: 20px;
+}
+
+.logo h3 {
+  font-size: 20px;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.logo i {
+  color: red;
+}
+
+.logo a, .logo a:link, .logo a:visited, .logo a:hover {
+  color: white;
+  font-size: 24px;
+  font-family: 'Source Code Pro', monospace;
+  text-decoration: none;
+  font-weight: bolder;
 }
 
 .box {
