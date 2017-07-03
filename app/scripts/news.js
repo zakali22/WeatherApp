@@ -22,7 +22,6 @@ $(document).ready(function() {
                 output += '<div class="row">';
                   output += '<div class="col-md-6">';
                     output += '<h1>' + val.title + '</h1>';
-                    output += '<h3 class="collapsable">' + val.description + '</h3>';
                   output += '</div>';
                   output += '<div class="col-md-6">';
                     output += '<img class="img-responsive" src="' + val.urlToImage + '"/>';
@@ -34,4 +33,51 @@ $(document).ready(function() {
             $('.articles').html(output);
         });
     });
+
+
+    /* ----------------------------------------------------------------------------------------------
+    -----------------------------------------------------------------------------------------------*/
+
+    $('.nav').click(function(event) {
+      /* Act on the event */
+      $.getJSON('https://newsapi.org/v1/sources?&category=' + event.target.id + '&language=en',
+        function(data) {
+          /*optional stuff to do after success */
+          var sourceArr = [];
+          $.each(data.sources, function(index, val) {
+            sourceArr.push(val.id);
+          });
+          var random = parseInt(Math.floor((Math.random() * parseInt(sourceArr.length)) + 0));
+
+          $.getJSON('https://newsapi.org/v1/articles?source=' + sourceArr[random] +'&sortBy=top&apiKey=14613ad2a71d44acb0e4cab6cef1c265',
+            function(data) {
+              /*optional stuff to do after success */
+              console.log(data.articles);
+              var output = '';
+              $.each(data.articles, function(index, val) {
+                output += '<div class="art col-md-12">';
+                  output += '<div class="row">';
+                    output += '<div class="col-md-6">';
+                      output += '<h1>' + val.title + '</h1>';
+                    output += '</div>';
+                    output += '<div class="col-md-6">';
+                      output += '<img class="img-responsive" src="' + val.urlToImage + '"/>';
+                    output += '</div>';
+                  output += '</div>';
+                output += '</div>';
+
+              });
+              $('.articles').html(output);
+          });
+      });
+    });
+
+
+
+
+
+
+
+
+
 });
