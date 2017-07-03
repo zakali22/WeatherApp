@@ -7,7 +7,7 @@ $icon-font-path: '../fonts/';
 @import url('https://fonts.googleapis.com/css?family=Cabin|Inconsolata|Nunito|Nunito+Sans|Pacifico|Quicksand|Rubik|VT323');
 
 body {
-  background-color: #5cc7b2;
+  background-color: rgb(0, 174, 239);
 }
 
 
@@ -85,31 +85,28 @@ body {
   width: 70%;
   margin-bottom: 50px;
   padding-bottom: 50px;
-  height: 350px;
+  height: 70%;
 }
 
 
 .art h1 {
   text-align: center;
   position: relative;
-  top: 100px;
-  font-size: 30px;
+  top: 80px;
+  font-size: 1.875em;
   font-family: 'Nunito', sans-serif;
 }
 
-.art h3 {
-  width: 100%;
-  font-size: 22px;
-  position: relative;
-  top: -10px;
-  font-family: 'Quicksand', sans-serif;
-}
 
 .art img {
   position: relative;
   top: 25px;
-  max-height: 300px;
   float: right;
+}
+
+.art a, .art a:link, .art a:visited, .art a:hover {
+  color: black;
+  text-decoration: none;
 }
 
 .nav {
@@ -125,11 +122,11 @@ body {
 .nav ul li {
   display: inline-block;
   padding-right: 27px;
-  font-size: 20px;
+  font-size: 23px;
   color: white;
   font-family: 'Quicksand', sans-serif;
   cursor: pointer;
-  font-weight: bold;
+  font-weight: bolder;
 }
 
 
@@ -139,8 +136,15 @@ body {
     .sidenav a {font-size: 18px;}
 }
 
-@media screen and (max-width: 1650px) {
-  .art  {
-    height: 50%;
+@media screen and (min-width: 993px) and (max-width: 1470px) {
+  .art h1 {
+    top: 20px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .art h1 {
+    font-size: 20px;
+    top: 10px;
   }
 }
