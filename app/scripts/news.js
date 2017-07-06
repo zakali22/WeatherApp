@@ -19,6 +19,7 @@ $(document).ready(function() {
           console.log(data.articles);
             var output = '';
             $.each(data.articles, function(index, val) {
+              if(val.url){
               output += '<a href="' + val.url + '"><div class="art col-md-12">';
                 output += '<div class="row">';
                   output += '<div class="col-md-6">';
@@ -29,7 +30,7 @@ $(document).ready(function() {
                   output += '</div>';
                 output += '</div>';
               output += '</div></a>';
-
+              }
             });
             $('.articles').html(output);
         });
