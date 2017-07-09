@@ -14,8 +14,7 @@ $ npm install
 # Use `bower.json` to pull down the app's dependencies from Bower
 $ bower install
 
-# The (unwritten) tests have Bower dependencies as well. Grab those:
-$ cd test
-$ bower install
+# Run the server
+$ gulp serve
 
 ```
