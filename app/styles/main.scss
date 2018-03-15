@@ -137,3 +137,76 @@ li.nav-item.active {
   background-attachment: fixed;
   height: 100vh;
 }
+
+
+@media screen and (max-width: 900px) {
+  .navbar-brand {
+    width: 100%;
+  }
+
+  .jumbotron {
+    background-color: #f75930;
+    position: relative;
+    top: -20px;
+    height: 40vh;
+  }
+
+  .jumbotron .container {
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  .jumbotron h1 {
+    font-family: 'Poiret One', serif;
+    color: white;
+    font-size: 25px;
+    font-weight: 100;
+    text-align: center;
+  }
+
+  .page1, .page2 {
+    background-attachment: scroll;
+    height: 40vh;
+  }
+
+  .page1 h1, .page2 h1 {
+    font-size: 50px;
+  }
+}
+
+@media screen and (min-width: 767.99px) and (max-width: 900px) {
+    .jumbotron h1 {
+      font-size: 40px;
+    }
+
+    .jumbotron .container {
+      margin-top: 30px;
+    }
+
+}
+
+@media screen and (min-width: 901px) and (max-width: 1500px){
+    .jumbotron {
+      height: 70vh;
+    }
+
+    .jumbotron .container {
+      width: 80%;
+      margin-top: 30px;
+    }
+
+    .page1, .page2 {
+      background-attachment: scroll;
+      height: 70vh;
+    }
+
+    .page1 h1, .page2 h1 {
+      font-size: 50px;
+    }
+} 
+
+@media screen and (min-width: 1501px) and (max-width: 1730px){
+    .jumbotron .container {
+      width: 70%;
+    }
+}

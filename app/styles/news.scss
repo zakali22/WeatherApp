@@ -137,3 +137,33 @@ li.nav-item.active {
   font-family: 'Poiret One', sans-serif;
   font-weight: bolder;
 }
+
+@media screen and (max-width: 767px){
+  .navbar-brand {
+    width: 100%;
+  }
+
+  .main ul {
+    flex-direction: column;
+  }
+
+  .main li {
+    font-size: 20px;
+  }
+
+  .articles .col-sm-6 {
+      height: 50vh;
+  }
+
+  .articles h1 {
+    width: 90%;
+    font-size: 20px;
+    padding: 10px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px){
+  .articles .col-sm-6, .articles {
+    width: 100%;
+  }
+}

@@ -42,7 +42,7 @@ $(document).ready(function() {
         var minutes = d.getMinutes();
         var day = d.getDay();
         var degree = (data.main.temp - 273.15);
-
+        
         var output = '<h1>Forecast for <span style="color: coral;">' + data.name + '</span></h1>';
         output += '<div class="row">';
         output += '<div class="col-md-12">';
@@ -60,13 +60,13 @@ $(document).ready(function() {
         output += '</div>';
         output += '</div>';
         output += '<div class="row">';
-        output += '<div class="col-sm-4">';
+        output += '<div class="col-lg-4">';
         output += '<h1>' + weekday[day] + '</h1>';
         output += '</div>';
-        output += '<div class="col-sm-4">';
+        output += '<div class="col-lg-4">';
         output += '<h1>' + hours + ':' + minutes + '</h1>';
         output += '</div>';
-        output += '<div class="col-sm-4">';
+        output += '<div class="col-lg-4">';
         output += '<h1>' + degree.toFixed(1) + '<span style="color: coral;">C<sup>o</sup></span></h1>';
         output += '</div>';
         output += '</div>';
