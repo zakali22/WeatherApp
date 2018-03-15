@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sky Watch</title>
+    <title>Cloud Lime</title>
 
     <!-- Place favicon.ico in the root directory -->
     <link rel="apple-touch-icon" sizes="57x57" href="images/apple-icon-57x57.png">
@@ -29,7 +29,11 @@
     <!-- endbower -->
     <!-- endbuild -->
 
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
     <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="styles/animate.css">
+    <link rel="stylesheet" type="text/css" href="styles/tiltedpage-scroll.css">
     <link rel="stylesheet" href="styles/news.css">
     <!-- endbuild -->
 
@@ -38,31 +42,36 @@
     <!--[if IE]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="/">Cloud<span>Lime</span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <div id="mySidenav" class="sidenav">
-      <a href="javascript:void(0)" class="closebtn">&times;</a>
-      <a href="/">Home</a>
-      <a href="weather.html">Weather</a>
-      <a href="news.html">News</a>
-    </div>
-
-    <!-- Use any element to open the sidenav -->
-    <span class="navicon"><img src="icon.ico"/></span>
-
-    <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
-    <div id="main">
-      <div class="container-fluid">
-        <div class="nav">
-          <ul>
-            <li id="general">Politics</li>
-            <li id="business">Business</li>
-            <li id="technology">Tech</li>
-          </ul>
-        </div>
-        <div class="row articles">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="news.html">News</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="weather.html">Weather</a>
+            </li>
         </div>
       </div>
+    </nav> <!-- Navigation -->
+
+    <div class="main">
+      <ul class="categories">
+          <li ><a href="#" id="general">Politics</a></li>
+          <li><a href="#" id="business">Business</a></li>
+          <li><a href="#" id="technology">Tech</a></li>
+      </ul>
     </div>
+    <div class="articles"></div>
 
 
 

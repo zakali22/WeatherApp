@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sky Watch</title>
+    <title>Cloud Lime</title>
 
     <!-- Place favicon.ico in the root directory -->
     <link rel="apple-touch-icon" sizes="57x57" href="images/apple-icon-57x57.png">
@@ -29,7 +29,11 @@
     <!-- endbower -->
     <!-- endbuild -->
 
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
     <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="styles/animate.css">
+    <link rel="stylesheet" type="text/css" href="styles/tiltedpage-scroll.css">
     <link rel="stylesheet" href="styles/weather.css">
     <!-- endbuild -->
 
@@ -38,35 +42,37 @@
     <!--[if IE]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">Cloud<span>Lime</span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <div id="mySidenav" class="sidenav">
-      <a href="javascript:void(0)" class="closebtn">&times;</a>
-      <a href="/">Home</a>
-      <a href="weather.html">Weather</a>
-      <a href="news.html">News</a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="news.html">News</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="weather.html">Weather</a>
+            </li>
+        </div>
+      </nav> <!-- Navigation -->
     </div>
 
-    <!-- Use any element to open the sidenav -->
-    <span class="navicon"><img src="icon.ico"/></span>
-
-    <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
-    <div id="main">
-      <div class="container first">
-        <div class="search">
-          <h1>Find weather for your location</h1>
-          <form class="form-inline">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Search for a location">
-            </div>
-            <button type="submit" class="btn btn-info">Search</button>
-          </form>
-        </div>
-      </div>
-
-      <div class="container widget">
-        <div class="row">
-
-        </div>
+    <div class="jumbotron">
+      <div class="container search">
+        <h1 class="display-4 tlt">Find weather for city</h1>
+        <form class="form-inline mt-5 mx-auto">
+          <div class="form-group mx-sm-3 mb-2">
+            <input type="text" class="form-control" id="location" placeholder="Enter a city">
+          </div>
+          <button type="submit" class="btn btn-warning mb-2">Search</button>
+        </form>
       </div>
     </div>
 
@@ -104,7 +110,14 @@
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
     <!-- endbuild -->
 
-    <!-- build:js scripts/main.js -->
+
+    <script type="text/javascript" src="scripts/jquery.lettering.js"></script>
+    <script type="text/javascript" src="scripts/jquery.fittext.js"></script>
+    <script type="text/javascript" src="scripts/jquery.textillate.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
+
+    <!-- build:js scripts/weather.js -->
     <script src="scripts/weather.js"></script>
     <!-- endbuild -->
   </body>

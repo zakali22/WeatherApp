@@ -17,19 +17,15 @@ $(document).ready(function() {
           function(data) {
             /*optional stuff to do after success */
           console.log(data.articles);
-            var output = '';
+            var output = '<div class="container-fluid"';
+            output += '<div class="row">';
             $.each(data.articles, function(index, val) {
-              if(val.url){
-              output += '<a href="' + val.url + '"><div class="art col-md-12">';
-                output += '<div class="row">';
-                  output += '<div class="col-md-6">';
-                    output += '<h1>'  + val.title + '</h1>';
-                  output += '</div>';
-                  output += '<div class="col-md-6">';
-                    output += '<img class="img-responsive" src="' + val.urlToImage + '"/>';
-                  output += '</div>';
-                output += '</div>';
-              output += '</div></a>';
+              if(val.url && val.urlToImage){
+                output += '<div class="col-md-6" style="background-image: url(' + val.urlToImage + ')">';
+                output += '<a href="' + val.url + '">';
+                output += '<h1>' + val.title + '</h1>';
+                output += '</a>';   
+                output += '</div>';      
               }
             });
             $('.articles').html(output);
@@ -41,8 +37,9 @@ $(document).ready(function() {
         Fetch headlines based on what was clicked
     -----------------------------------------------------------------------------------------------*/
 
-    $('.nav').click(function(event) {
+    $('.categories').click(function(event) {
       /* Act on the event */
+      console.log(event.target.id);
       $.getJSON('https://newsapi.org/v1/sources?&category=' + event.target.id + '&language=en',
         function(data) {
           /*optional stuff to do after success */
@@ -56,31 +53,19 @@ $(document).ready(function() {
             function(data) {
               /*optional stuff to do after success */
               console.log(data.articles);
-              var output = '';
+              var output = '<div class="container-fluid"';
+              output += '<div class="row">';
               $.each(data.articles, function(index, val) {
-                output += '<a href="' + val.url + '"><div class="art col-md-12">';
-                  output += '<div class="row">';
-                    output += '<div class="col-md-6">';
-                      output += '<h1>' + val.title + '</h1>';
-                    output += '</div>';
-                    output += '<div class="col-md-6">';
-                      output += '<img class="img-responsive" src="' + val.urlToImage + '"/>';
-                    output += '</div>';
-                  output += '</div>';
-                output += '</div></a>';
-
+                if(val.url && val.urlToImage){
+                  output += '<div class="col-md-6" style="background-image: url(' + val.urlToImage + ')">';
+                  output += '<a href="' + val.url + '">';
+                  output += '<h1>' + val.title + '</h1>';
+                  output += '</a>';   
+                  output += '</div>';      
+                }
               });
               $('.articles').html(output);
           });
       });
     });
-
-
-
-
-
-
-
-
-
 });

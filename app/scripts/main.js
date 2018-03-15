@@ -19,4 +19,21 @@ $(document).ready(function() {
       'margin-left': '0px'
     });
   });
+
+  $('.tlt').textillate({ 
+    inEffects: [ 'pulse' ],
+    // custom set of 'out' effects
+    outEffects: [ 'pulse' ],
+    in: { 
+      effect: 'pulse'
+    },
+    out: {
+      effect: 'pulse'
+    },
+    loop: true,
+    autoStart: true
+  });
+
+
+
 });

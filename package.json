@@ -44,5 +44,8 @@
         "single"
       ]
     }
+  },
+  "dependencies": {
+    "bower": "^1.8.2"
   }
 }

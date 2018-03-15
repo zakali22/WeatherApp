@@ -3,148 +3,137 @@ $icon-font-path: '../fonts/';
 @import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 // endbower
 
-@import url('https://fonts.googleapis.com/css?family=Limelight|Changa+One|Jaldi|Oxygen');
-@import url('https://fonts.googleapis.com/css?family=Cabin|Inconsolata|Nunito|Nunito+Sans|Pacifico|Quicksand|Rubik|VT323');
+
+@import url('https://fonts.googleapis.com/css?family=Limelight|Changa+One|Jaldi|Oxygen|Source+Code+Pro');
+@import url('https://fonts.googleapis.com/css?family=Cabin|Inconsolata|Oswald|Poiret+One|Nunito|Nunito+Sans|Josefin+Sans|Pacifico|Quicksand|Rubik|VT323|Roboto');
 
 body {
-  background-color: rgb(0, 174, 239);
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
 }
 
-
-.container-fluid {
-  margin-top: 150px;
-}
-
-.articles {
-  margin-left: 350px;
-}
-
-.navicon {
-  position: absolute;
-  left: 0;
-  top: 30px;
-  margin-left: 30px;
-  cursor: pointer;
-}
-
-.navicon img {
-  width: auto;
-  height: auto;
-  max-width: 60px;
-  max-height: 40px;
-  color: #333333;
-}
-
-/* The side navigation menu */
-.sidenav {
-    height: 100%; /* 100% Full-height */
-    width: 0; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Stay on top */
-    top: 0;
-    left: 0;
-    background-color: #111; /* Black*/
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 60px; /* Place content 60px from the top */
-    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
-}
-
-/* The navigation menu links */
-.sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-    font-family: 'Oxygen', sans-serif;
-}
-
-/* When you mouse over the navigation links, change their color */
-.sidenav a:hover, .offcanvas a:focus{
-    color: #f1f1f1;
-}
-
-/* Position and style the close button (top right corner) */
-.sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-}
-
-#main {
-    transition: margin-left .5s;
-    padding: 20px;
-}
-
-.art {
-  background-color: white;
-  color: black;
-  width: 70%;
-  margin-bottom: 50px;
-  padding-bottom: 50px;
-  max-height: 70%;
-}
-
-
-.art h1 {
-  text-align: center;
-  position: relative;
-  top: 80px;
-  font-size: 1.875em;
-  font-family: 'Nunito', sans-serif;
-}
-
-
-.art img {
-  position: relative;
-  top: 25px;
-  float: right;
-}
-
-.art a, .art a:link, .art a:visited, .art a:hover {
+a, a:link, a:hover, a:visited{
   color: black;
   text-decoration: none;
 }
 
-.nav {
-  display: block;
-  width: 50%;
-  margin: 0 auto;
-  text-align: center;
-  position: relative;
-  top: -80px;
-  left: 50px;
+.bg-light {
+  background-color: #ff9966 !important;
 }
 
-.nav ul li {
-  display: inline-block;
-  padding-right: 27px;
-  font-size: 23px;
+
+.navbar-brand {
+    width: 40%;
+    display: inline;
+    margin: 0 auto;
+    text-align: left;
+    font-family: 'Josefin Sans', sans-serif;
+    margin-top: 15px;
+    font-size: 40px;
+    font-weight: 200;
+}
+
+.navbar-brand span {
+  font-family: 'Poiret One', serif;
+}
+
+.navbar-light .navbar-brand {
   color: white;
-  font-family: 'Quicksand', sans-serif;
-  cursor: pointer;
+  z-index: 100;
+}
+
+button.navbar-toggler {
+  position: absolute;
+  top: 10px;
+  right: 10px; 
+}
+
+button.navbar-toggler:focus {
+  outline: none;
+}
+
+.navbar-nav {
+  margin-top: 10px;
+  float: right;
+}
+
+.navbar-collapse {
+  z-index: 1;
+}
+
+.navbar-light .navbar-nav .nav-link   {
+  color: white;
+}
+
+li.nav-item.active {
+  color: white;
+}
+
+.nav-item {
+  margin-right: 30px;
+  font-size: 20px;
+  font-family: 'Poiret One', sans-serif;
   font-weight: bolder;
 }
 
 
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
+.main {
+  margin-top: -13px;
 }
 
-@media screen and (min-width: 993px) and (max-width: 1470px) {
-  .art h1 {
-    top: 20px;
-  }
+.main ul {
+  display:flex;
+  flex-direction: row;
+  align-items:center;
+  justify-content: center;
+  list-style: none;
 }
 
-@media screen and (max-width: 992px) {
-  .art h1 {
-    font-size: 20px;
-    top: 10px;
-  }
+.main li {
+  margin: 15px;
+  font-size: 25px;
+  font-family: 'Poiret One', sans-serif;
+  font-weight: bolder;
+  letter-spacing: 3px;
+}
+
+.articles {
+  width: 100%;
+}
+
+.articles .col-md-6 {
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  filter: brightness(50%);
+  z-index: 100;
+  transition: filter .8s ease-out;
+  background-size: cover;
+  background-position: center center;
+  z-index: 100;
+}
+
+.articles .col-md-6:hover{
+  filter: brightness(100%);
+}
+
+.articles a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.articles h1 {
+  color: black;
+  width: 80%;
+  z-index: 1;
+  font-size: 30px;
+  background-color: white;
+  padding: 30px;
+  font-family: 'Poiret One', sans-serif;
+  font-weight: bolder;
 }

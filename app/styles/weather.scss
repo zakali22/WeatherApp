@@ -3,148 +3,111 @@ $icon-font-path: '../fonts/';
 @import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 // endbower
 
-@import url('https://fonts.googleapis.com/css?family=Limelight|Changa+One|Jaldi|Oxygen');
+
+@import url('https://fonts.googleapis.com/css?family=Limelight|Changa+One|Jaldi|Oxygen|Source+Code+Pro');
+@import url('https://fonts.googleapis.com/css?family=Cabin|Inconsolata|Oswald|Poiret+One|Nunito|Nunito+Sans|Josefin+Sans|Pacifico|Quicksand|Rubik|VT323|Roboto');
 
 body {
-  background-color: #ffa07a;
+  background-color: #fff;
+}
+
+a, a:link, a:hover, a:visited{
+  color: black;
+  text-decoration: none;
+}
+
+.bg-light {
+  background-color: #fff !important;
 }
 
 
-.container.first{
-  display: block;
-  width: 90%;
-  margin: 0 auto;
-  //border: 1px solid white;
-  margin-top: 250px;
+.navbar-brand {
+    width: 40%;
+    display: inline;
+    margin: 0 auto;
+    text-align: left;
+    font-family: 'Josefin Sans', sans-serif;
+    margin-top: 15px;
+    font-size: 40px;
+    font-weight: 200;
 }
 
-.search {
-  text-align: center;
+.navbar-brand span {
+  font-family: 'Poiret One', serif;
 }
 
-.search h1 {
-  font-size: 55px;
-  font-family: 'Changa One', cursive;
+.navbar-light .navbar-brand {
+  color: black;
+  z-index: 100;
 }
 
-.search form {
-  margin-top: 40px;
-}
-
-.navicon {
+button.navbar-toggler {
   position: absolute;
-  left: 0;
-  top: 30px;
-  margin-left: 30px;
-  cursor: pointer;
+  top: 10px;
+  right: 10px; 
 }
 
-.navicon img {
-  width: auto;
-  height: auto;
-  max-width: 60px;
-  max-height: 40px;
-  color: #333333;
+button.navbar-toggler:focus {
+  outline: none;
 }
 
-/* The side navigation menu */
-.sidenav {
-    height: 100%; /* 100% Full-height */
-    width: 0; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Stay on top */
-    top: 0;
-    left: 0;
-    background-color: #111; /* Black*/
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 60px; /* Place content 60px from the top */
-    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+.navbar-nav {
+  margin-top: 10px;
+  float: right;
 }
 
-/* The navigation menu links */
-.sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-    font-family: 'Oxygen', sans-serif;
+.navbar-collapse {
+  z-index: 1;
 }
 
-/* When you mouse over the navigation links, change their color */
-.sidenav a:hover, .offcanvas a:focus{
-    color: #f1f1f1;
+.navbar-light .navbar-nav .nav-link   {
+  color: black;
 }
 
-/* Position and style the close button (top right corner) */
-.sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
+li.nav-item.active {
+  color: black;
 }
 
-#main {
-    transition: margin-left .5s;
-    padding: 20px;
+.nav-item {
+  margin-right: 30px;
+  font-size: 20px;
+  font-family: 'Poiret One', sans-serif;
+  font-weight: bolder;
 }
 
-.widget {
+
+.jumbotron {
+  background-color: #fff;
+  position: relative;
+  top: -10px;
+  height: 100vh;
   display: flex;
-  align-content: center;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  position: relative;
-  top: -100px;
-}
-
-.widget .thumbnail{
-  background-color: #ffa07a;
-  border: 3px solid white;
-  padding: 30px;
-  border-radius: 30px;
-}
-
-.widget .outer {
-  width: 100%;
-}
-
-#name {
-  font-size: 30px;
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-#day {
   text-align: center;
 }
 
-.push-up {
+.jumbotron h1 {
+  font-family: 'Poiret One', serif;
+  color: black;
+  font-weight: 100;
+}
+
+.jumbotron .container {
+  width: 50%;
   position: relative;
-  top: -220px;
+  top: -70px;
 }
 
-.thumbnail .caption {
-  color: white;
+.jumbotron .container form {
+  display: block;
 }
 
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
+img {
+  width: 30%;
 }
 
-
-
-/* Customize container */
-@media (min-width: 770px) {
-  .widget {
-    width: 100%;
-  }
-}
-
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-
+.btn {
+  margin-left:0;
 }

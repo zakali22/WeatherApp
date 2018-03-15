@@ -4,135 +4,136 @@ $icon-font-path: '../fonts/';
 // endbower
 
 @import url('https://fonts.googleapis.com/css?family=Limelight|Changa+One|Jaldi|Oxygen|Source+Code+Pro');
-@import url('https://fonts.googleapis.com/css?family=Cabin|Inconsolata|Nunito|Nunito+Sans|Pacifico|Quicksand|Rubik|VT323');
+@import url('https://fonts.googleapis.com/css?family=Cabin|Inconsolata|Oswald|Poiret+One|Nunito|Nunito+Sans|Josefin+Sans|Pacifico|Quicksand|Rubik|VT323|Roboto');
 
 body {
-  background-color: #ffcc00;
+  background-color: #fff;
 }
 
-.container {
-  display: block;
-  width: 90%;
-  margin: 0 auto;
-  //border: 1px solid white;
-  margin-top: 250px;
-}
-
-.logo {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  margin-right: 25px;
-  margin-bottom: 20px;
-}
-
-.logo h3 {
-  font-size: 20px;
-  font-family: 'Quicksand', sans-serif;
-}
-
-.logo i {
-  color: red;
-}
-
-.logo a, .logo a:link, .logo a:visited, .logo a:hover {
+a, a:link, a:hover, a:visited{
   color: white;
-  font-size: 24px;
-  font-family: 'Source Code Pro', monospace;
   text-decoration: none;
+}
+
+.bg-light {
+  background-color: #f75930 !important;
+}
+
+
+.navbar-brand {
+    width: 40%;
+    display: inline;
+    margin: 0 auto;
+    text-align: left;
+    font-family: 'Josefin Sans', sans-serif;
+    margin-top: 15px;
+    font-size: 40px;
+    font-weight: 200;
+}
+
+.navbar-brand span {
+  font-family: 'Poiret One', serif;
+}
+
+.navbar-light .navbar-brand {
+  color: white;
+  z-index: 100;
+}
+
+button.navbar-toggler {
+  position: absolute;
+  top: 10px;
+  right: 10px; 
+}
+
+button.navbar-toggler:focus {
+  outline: none;
+}
+
+.navbar-nav {
+  margin-top: 10px;
+  float: right;
+}
+
+.navbar-collapse {
+  z-index: 1;
+}
+
+.navbar-light .navbar-nav .nav-link   {
+  color: white;
+}
+
+li.nav-item.active {
+  color: white;
+}
+
+.nav-item {
+  margin-right: 30px;
+  font-size: 20px;
+  font-family: 'Poiret One', sans-serif;
   font-weight: bolder;
 }
 
-.box {
-  text-align: center;
+.jumbotron {
+  background-color: #f75930;
+  position: relative;
+  top: -100px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.box h1 {
-  font-size: 75px;
-  font-family: 'Changa One', cursive;
+.jumbotron h1 {
+  font-family: 'Poiret One', serif;
+  color: white;
+  font-weight: 100;
 }
 
-.box p {
-  margin-top: 35px;
-  font-size: 35px;
-  font-family: 'Oxygen', sans-serif;
+.jumbotron .container {
+  width: 50%;
+  position: relative;
+  top: -70px;
 }
 
-.navicon {
-  position: absolute;
-  left: 0;
-  top: 30px;
-  margin-left: 30px;
-  cursor: pointer;
+.main {
+  margin-top: -130px;
 }
 
-.navicon img {
-  width: auto;
-  height: auto;
-  max-width: 60px;
-  max-height: 40px;
-  color: #333333;
+.main section {
+  margin-top: -20px;
 }
 
-/* The side navigation menu */
-.sidenav {
-    height: 100%; /* 100% Full-height */
-    width: 0; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Stay on top */
-    top: 0;
-    left: 0;
-    background-color: #111; /* Black*/
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 60px; /* Place content 60px from the top */
-    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+.page1 , .page2  {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+} 
+
+.page1 h1, .page2 h1 {
+  font-size: 100px;
+  color: white;
+  z-index: 1;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
-/* The navigation menu links */
-.sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-    font-family: 'Oxygen', sans-serif;
+.page1 {
+  background-image: url('../images/winter.jpg');
+  background-repeat: none;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  height: 100vh;
+  z-index: 100;
 }
 
-/* When you mouse over the navigation links, change their color */
-.sidenav a:hover, .offcanvas a:focus{
-    color: #f1f1f1;
-}
-
-/* Position and style the close button (top right corner) */
-.sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-}
-
-/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-#main {
-    transition: margin-left .5s;
-    padding: 20px;
-}
-
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
-}
-
-
-
-/* Customize container */
-@media (min-width: 768px) {
-
-}
-
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-
+.page2 {
+  background-image: url('../images/news.jpg');
+  background-repeat: none;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  height: 100vh;
 }
