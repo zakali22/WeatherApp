@@ -141,7 +141,7 @@ jQuery(document).ready(function($){
     	var animationParams = selectAnimation(animationType, middleScroll, 'prev');
     	unbindScroll(visibleSection.prev('.cd-section'), animationParams[3]);
 
-        if( !animating && !visibleSection.is(":first-child") ) {
+        if( !animating && !visibleSection.is(':first-child') ) {
         	animating = true;
             visibleSection.removeClass('visible').children('div').velocity(animationParams[2], animationParams[3], animationParams[4])
             .end().prev('.cd-section').addClass('visible').children('div').velocity(animationParams[0] , animationParams[3], animationParams[4], function(){
@@ -165,7 +165,7 @@ jQuery(document).ready(function($){
     	var animationParams = selectAnimation(animationType, middleScroll, 'next');
     	unbindScroll(visibleSection.next('.cd-section'), animationParams[3]);
 
-        if(!animating && !visibleSection.is(":last-of-type") ) {
+        if(!animating && !visibleSection.is(':last-of-type') ) {
             animating = true;
             visibleSection.removeClass('visible').children('div').velocity(animationParams[1], animationParams[3], animationParams[4] )
             .end().next('.cd-section').addClass('visible').children('div').velocity(animationParams[0], animationParams[3], animationParams[4], function(){
@@ -182,7 +182,7 @@ jQuery(document).ready(function($){
     	//if clicking on navigation - unbind scroll and animate using custom velocity animation
     	if( hijacking == 'off') {
     		$(window).off('scroll', scrollAnimation);
-    		( animationType == 'catch') ? $('body, html').scrollTop(section.offset().top) : section.velocity("scroll", { duration: time });
+    		( animationType == 'catch') ? $('body, html').scrollTop(section.offset().top) : section.velocity('scroll', { duration: time });
     	}
     }
 
@@ -206,7 +206,7 @@ jQuery(document).ready(function($){
 
 	function deviceType() {
 		//detect if desktop/mobile
-		return window.getComputedStyle(document.querySelector('body'), '::before').getPropertyValue('content').replace(/"/g, "").replace(/'/g, "");
+		return window.getComputedStyle(document.querySelector('body'), '::before').getPropertyValue('content').replace(/"/g, '').replace(/'/g, '');
 	}
 
 	function selectAnimation(animationName, middleScroll, direction) {
@@ -425,21 +425,21 @@ jQuery(document).ready(function($){
 /* Custom effects registration - feature available in the Velocity UI pack */
 //none
 $.Velocity
-    .RegisterEffect("translateUp", {
+    .RegisterEffect('translateUp', {
     	defaultDuration: 1,
         calls: [ 
             [ { translateY: '-100%'}, 1]
         ]
     });
 $.Velocity
-    .RegisterEffect("translateDown", {
+    .RegisterEffect('translateDown', {
     	defaultDuration: 1,
         calls: [ 
             [ { translateY: '100%'}, 1]
         ]
     });
 $.Velocity
-    .RegisterEffect("translateNone", {
+    .RegisterEffect('translateNone', {
     	defaultDuration: 1,
         calls: [ 
             [ { translateY: '0', opacity: '1', scale: '1', rotateX: '0', boxShadowBlur: '0'}, 1]
@@ -448,7 +448,7 @@ $.Velocity
 
 //scale down
 $.Velocity
-    .RegisterEffect("scaleDown", {
+    .RegisterEffect('scaleDown', {
     	defaultDuration: 1,
         calls: [ 
             [ { opacity: '0', scale: '0.7', boxShadowBlur: '40px' }, 1]
@@ -456,14 +456,14 @@ $.Velocity
     });
 //rotation
 $.Velocity
-    .RegisterEffect("rotation", {
+    .RegisterEffect('rotation', {
     	defaultDuration: 1,
         calls: [ 
             [ { opacity: '0', rotateX: '90', translateY: '-100%'}, 1]
         ]
     });
 $.Velocity
-    .RegisterEffect("rotation.scroll", {
+    .RegisterEffect('rotation.scroll', {
     	defaultDuration: 1,
         calls: [ 
             [ { opacity: '0', rotateX: '90', translateY: '0'}, 1]
@@ -471,7 +471,7 @@ $.Velocity
     });
 //gallery
 $.Velocity
-    .RegisterEffect("scaleDown.moveUp", {
+    .RegisterEffect('scaleDown.moveUp', {
     	defaultDuration: 1,
         calls: [ 
         	[ { translateY: '-10%', scale: '0.9', boxShadowBlur: '40px'}, 0.20 ],
@@ -480,7 +480,7 @@ $.Velocity
         ]
     });
 $.Velocity
-    .RegisterEffect("scaleDown.moveUp.scroll", {
+    .RegisterEffect('scaleDown.moveUp.scroll', {
     	defaultDuration: 1,
         calls: [ 
         	[ { translateY: '-100%', scale: '0.9', boxShadowBlur: '40px' }, 0.60 ],
@@ -488,7 +488,7 @@ $.Velocity
         ]
     });
 $.Velocity
-    .RegisterEffect("scaleUp.moveUp", {
+    .RegisterEffect('scaleUp.moveUp', {
     	defaultDuration: 1,
         calls: [ 
         	[ { translateY: '90%', scale: '0.9', boxShadowBlur: '40px' }, 0.20 ],
@@ -497,7 +497,7 @@ $.Velocity
         ]
     });
 $.Velocity
-    .RegisterEffect("scaleUp.moveUp.scroll", {
+    .RegisterEffect('scaleUp.moveUp.scroll', {
     	defaultDuration: 1,
         calls: [ 
         	[ { translateY: '0%', scale: '0.9' , boxShadowBlur: '40px' }, 0.60 ],
@@ -505,7 +505,7 @@ $.Velocity
         ]
     });
 $.Velocity
-    .RegisterEffect("scaleDown.moveDown", {
+    .RegisterEffect('scaleDown.moveDown', {
     	defaultDuration: 1,
         calls: [ 
         	[ { translateY: '10%', scale: '0.9', boxShadowBlur: '40px'}, 0.20 ],
@@ -514,7 +514,7 @@ $.Velocity
         ]
     });
 $.Velocity
-    .RegisterEffect("scaleDown.moveDown.scroll", {
+    .RegisterEffect('scaleDown.moveDown.scroll', {
     	defaultDuration: 1,
         calls: [ 
         	[ { translateY: '100%', scale: '0.9', boxShadowBlur: '40px' }, 0.60 ],
@@ -522,7 +522,7 @@ $.Velocity
         ]
     });
 $.Velocity
-    .RegisterEffect("scaleUp.moveDown", {
+    .RegisterEffect('scaleUp.moveDown', {
     	defaultDuration: 1,
         calls: [ 
         	[ { translateY: '-90%', scale: '0.9', boxShadowBlur: '40px' }, 0.20 ],
@@ -532,7 +532,7 @@ $.Velocity
     });
 //catch up
 $.Velocity
-    .RegisterEffect("translateUp.delay", {
+    .RegisterEffect('translateUp.delay', {
     	defaultDuration: 1,
         calls: [ 
             [ { translateY: '0%'}, 0.8, { delay: 100 }],
@@ -540,14 +540,14 @@ $.Velocity
     });
 //opacity
 $.Velocity
-    .RegisterEffect("hide.scaleUp", {
+    .RegisterEffect('hide.scaleUp', {
     	defaultDuration: 1,
         calls: [ 
             [ { opacity: '0', scale: '1.2'}, 1 ]
         ]
     });
 $.Velocity
-    .RegisterEffect("hide.scaleDown", {
+    .RegisterEffect('hide.scaleDown', {
     	defaultDuration: 1,
         calls: [ 
             [ { opacity: '0', scale: '0.8'}, 1 ]
@@ -555,7 +555,7 @@ $.Velocity
     });
 //parallax
 $.Velocity
-    .RegisterEffect("translateUp.half", {
+    .RegisterEffect('translateUp.half', {
     	defaultDuration: 1,
         calls: [ 
             [ { translateY: '-50%'}, 1]

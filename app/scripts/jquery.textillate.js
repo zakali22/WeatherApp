@@ -7,7 +7,7 @@
  */
 
 (function ($) {
-  "use strict";
+  'use strict';
 
   function isInEffect (effect) {
     return /In/.test(effect) || $.inArray(effect, $.fn.textillate.defaults.inEffects) >= 0;
@@ -19,8 +19,8 @@
 
 
   function stringToBoolean(str) {
-    if (str !== "true" && str !== "false") return str;
-    return (str === "true");
+    if (str !== 'true' && str !== 'false') return str;
+    return (str === 'true');
   };
 
   // custom get data api method
@@ -155,7 +155,7 @@
         .lettering('words');
 
       // split words to individual characters if token type is set to 'char'
-      if (base.options.type == "char") {
+      if (base.options.type == 'char') {
         base.$current.find('[class^="word"]')
             .css({
               'display': 'inline-block',

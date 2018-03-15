@@ -16,7 +16,7 @@
 !function($){
   
   var defaults = {
-    sectionContainer: "> section",
+    sectionContainer: '> section',
     angle: 50,
     opacity: true,
     scale: true,
@@ -28,11 +28,11 @@
     var settings = $.extend({}, defaults, options),
         el = $(this);
         
-    el.find(settings.sectionContainer).addClass("tps-section");
+    el.find(settings.sectionContainer).addClass('tps-section');
     
     el.find('.tps-section').each(function(){
       var el2 = $(this); 
-      el2.wrapInner("<div class='tps-wrapper'></div>");
+      el2.wrapInner('<div class=\'tps-wrapper\'></div>');
     });
     
     function isElementInViewport (el3) {
@@ -47,9 +47,9 @@
     function elementVisibilityMayChange (el4) {
       
       if ( isElementInViewport(el4) ) {
-        el4.addClass("tps-inview")
+        el4.addClass('tps-inview')
       } else {
-        el4.removeClass("tps-inview")
+        el4.removeClass('tps-inview')
       }
     }
     
