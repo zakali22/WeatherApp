@@ -7,6 +7,7 @@ const path = require("path");
 const cookieSession = require("cookie-session");
 const session = require("express-session");
 const expressValidator = require("express-validator");
+const passport = require("passport");
 
 const keys = require("./config/keys");
 
@@ -75,11 +76,15 @@ app.use(
 );
 
 // Passport Initialization
-
-// File requires
+app.use(passport.initialize());
+app.use(passport.session());
 
 /*---Mongoose--Collection*/
-require("./models/Users");
+require("./models/Users"); // Create the User model first. Everything after can then access it
+require("./services/passport");
+
+// Routes
+require("./routes/auth")(app);
 
 // PORT
 const PORT = process.env.PORT || 5000;

@@ -5,7 +5,7 @@ const FacebookStrategy = require("passport-facebook").Strategy;
 // Add the local strategy later on
 
 const keys = require("../config/keys");
-const Users = mongoose.model("Users");
+const User = mongoose.model("Users");
 
 // Serialization
 passport.serializeUser((user, done) => {
@@ -25,8 +25,8 @@ passport.deserializeUser((id, done) => {
 passport.use(
   new FacebookStrategy(
     {
-      clientID: keys.facebookKey,
-      clientSecret: keys.facebookSecret,
+      clientID: keys.facebookClientID,
+      clientSecret: keys.facebookClientSecret,
       callbackURL: "/auth/facebook/callback",
       proxy: true,
       profileFields: [
@@ -51,8 +51,8 @@ passport.use(
             name: profile.displayName,
             image: profile._json.picture.data.url,
             email: profile._json.email,
-            first_name: profile._json.name.givenName,
-            last_name: profile._json.name.familyName
+            first_name: profile._json.first_name,
+            last_name: profile._json.last_name
           })
             .save()
             .then(user => {
