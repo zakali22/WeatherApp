@@ -32,4 +32,17 @@ module.exports = app => {
       res.redirect("/");
     }
   );
+
+  // LOGOUT
+  app.get("/auth/logout", (req, res) => {
+    console.log(req.user);
+    req.logout();
+    res.redirect("/");
+  });
+
+  // CURRENTLY SIGNED IN
+  app.get("/auth/current_user", (req, res) => {
+    console.log(req.user);
+    res.send(req.user);
+  });
 };
