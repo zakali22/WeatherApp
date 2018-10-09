@@ -77,3 +77,10 @@ app.use(
 // Passport Initialization
 
 // File requires
+
+/*---Mongoose--Collection*/
+require("./models/Users");
+
+// PORT
+const PORT = process.env.PORT || 5000;
+app.listen(PORT);
