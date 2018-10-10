@@ -85,6 +85,10 @@ require("./services/passport");
 
 // Routes
 require("./routes/auth")(app);
+require("./routes/api")(app);
+
+// Other files
+require("./misc");
 
 // PORT
 const PORT = process.env.PORT || 5000;
