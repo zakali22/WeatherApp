@@ -85,7 +85,7 @@ require("./services/passport");
 
 // Routes
 require("./routes/auth")(app);
-require("./routes/api")(app);
+require("./routes/api/weatherapi")(app);
 
 // Other files
 require("./misc");
