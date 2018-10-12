@@ -1,0 +1,21 @@
+.header {
+  display: flex;
+  align-items: center;
+  height: 10rem;
+  justify-content: space-between;
+  padding-right: 3rem;
+  &__logo {
+    width: 15rem;
+    height: 10rem;
+    margin-top: 2rem;
+  }
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 0 0 10%;
+    &--link {
+      padding: 2rem;
+    }
+  }
+}
