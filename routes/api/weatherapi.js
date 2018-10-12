@@ -23,7 +23,17 @@ module.exports = app => {
           temp_min: response.data.main.temp_min,
           temp_max: response.data.main.temp_max
         };
-        res.send(weatherID);
+
+        axios({
+          method: "GET",
+          url: `https://api.unsplash.com/search/photos?page=1&orientation=landscape&query=${
+            req.params.city
+          }&client_id=${keys.unsplashID}`
+        }).then(response => {
+          console.log(response.data.results[0].urls.regular);
+          weatherID.image = response.data.results[0].urls.regular;
+          res.send(weatherID);
+        });
       })
       .catch(err => {
         console.log(err);

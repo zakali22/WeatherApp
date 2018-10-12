@@ -7,5 +7,6 @@ module.exports = {
   mongo_uri: "mongodb://localhost:27017/weatherApp",
   cookieKey: "jdbjdbfhbvdfvdydfvbdyfvudvfu",
   weatherID: "f8504abe6e01c1d06386e380802e8cba",
-  newsID: "df41219c89234f328a2bb11349c2c745"
+  newsID: "df41219c89234f328a2bb11349c2c745",
+  unsplashID: "b74b115eec84d3203d04d131755d09b586673569e20f4e7bf873ccc875aa5fa9"
 };
