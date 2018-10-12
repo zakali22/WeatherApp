@@ -28,3 +28,14 @@ body {
     }
   }
 }
+
+.homepage {
+  .container {
+    h1 {
+      font-size: 5rem;
+    }
+    span {
+      color: var(--light-blue);
+    }
+  }
+}

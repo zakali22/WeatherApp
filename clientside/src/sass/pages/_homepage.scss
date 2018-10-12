@@ -1,6 +1,19 @@
 .homepage {
   display: flex;
   flex-direction: column;
-  background: var(--light-blue);
+  background: linear-gradient(120deg, #f87f73 60%, #292423 40%);
   height: 100vh;
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    h1 {
+      span {
+        background: var(--white);
+        color: #f87f73;
+        padding: 0 1rem;
+      }
+    }
+  }
 }
