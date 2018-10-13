@@ -6,7 +6,7 @@ class Jumbotron extends Component {
   render() {
     return (
       <div className="homepage">
-        <Header />
+        <Header className="header" />
         <div className="container">
           <h1>
             An all-in-one personalized <span>weather & news</span> web app

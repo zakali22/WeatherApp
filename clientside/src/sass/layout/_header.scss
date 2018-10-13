@@ -4,7 +4,39 @@
   height: 10rem;
   justify-content: space-between;
   padding-right: 3rem;
-
+  &--overall {
+    background: none;
+  }
+  &__searchContainer {
+    flex: 0 0 45%;
+    &--input {
+      width: 80%;
+      border: none;
+      padding: 1.3rem;
+      border-radius: 10rem;
+      transition: all 0.4s ease-in-out;
+      &:focus {
+        outline: none;
+        width: 90%;
+        z-index: -1;
+      }
+      &::-webkit-input-placeholder {
+        font-size: 1.4rem;
+      }
+    }
+    button {
+      background: none;
+      border: none;
+    }
+    &--searchIcon {
+      height: 1.2rem;
+      width: 1.2rem;
+      transform: translateX(-3.5rem);
+      border: none;
+      cursor: pointer;
+      z-index: 1;
+    }
+  }
   &__logo {
     width: 15rem;
     height: 10rem;

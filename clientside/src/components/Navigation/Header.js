@@ -1,19 +1,21 @@
 import React, { Component } from "react";
 import Logo from "../../img/Logo.svg";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class Header extends Component {
   render() {
     return (
-      <div className="header">
-        <img src={Logo} className="header__logo" alt="Logo" />
+      <div className={this.props.className}>
+        <Link to="/">
+          <img src={Logo} className="header__logo" alt="Logo" />
+        </Link>
         <nav className="header__nav">
-          <a href={"#"} className="header__nav--link">
+          <Link to={"/weather"} className="header__nav--link">
             <div className="header__nav--item">weather</div>
-          </a>
-          <a href={"#"} className="header__nav--link">
+          </Link>
+          <Link to={"#"} className="header__nav--link">
             <div className="header__nav--item">news</div>
-          </a>
+          </Link>
         </nav>
       </div>
     );
