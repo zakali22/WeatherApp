@@ -5,39 +5,37 @@ const moment = require("moment");
 module.exports = app => {
   // CURRENT WEATHER
   app.get("/api/getCurrentWeather/:city", (req, res) => {
+    console.log(req.params.city);
     axios({
       method: "GET",
       url: `https://api.openweathermap.org/data/2.5/weather?q=${
         req.params.city
       }&units=metric&APPID=${keys.weatherID}`
-    })
-      .then(response => {
-        const weatherID = {};
-        weatherID.location = {
-          city: response.data.name,
-          country: response.data.sys.country
-        };
-        weatherID.weather = response.data.weather[0].description;
-        weatherID.tempRange = {
-          temp: response.data.main.temp,
-          temp_min: response.data.main.temp_min,
-          temp_max: response.data.main.temp_max
-        };
+    }).then(response => {
+      const weatherID = {};
+      weatherID.location = {
+        city: response.data.name,
+        country: response.data.sys.country
+      };
+      weatherID.weather = response.data.weather[0].description;
+      weatherID.time = moment().format("dddd h:mm a");
+      weatherID.tempRange = {
+        temp: Math.round(response.data.main.temp),
+        temp_min: Math.round(response.data.main.temp_min),
+        temp_max: Math.round(response.data.main.temp_max)
+      };
 
-        axios({
-          method: "GET",
-          url: `https://api.unsplash.com/search/photos?page=1&orientation=landscape&query=${
-            req.params.city
-          }&client_id=${keys.unsplashID}`
-        }).then(response => {
-          console.log(response.data.results[0].urls.regular);
-          weatherID.image = response.data.results[0].urls.regular;
-          res.send(weatherID);
-        });
-      })
-      .catch(err => {
-        console.log(err);
+      axios({
+        method: "GET",
+        url: `https://api.unsplash.com/search/photos?page=1&orientation=landscape&query=${
+          req.params.city
+        }&client_id=${keys.unsplashID}`
+      }).then(response => {
+        console.log(response.data.results[0].urls.regular);
+        weatherID.image = response.data.results[0].urls.regular;
+        res.send(weatherID);
       });
+    });
   });
   // FORECAST 16 DAYS
   app.get("/api/getWeatherForecast/:city", (req, res) => {
