@@ -50,5 +50,27 @@
     &--link {
       padding: 2rem;
     }
+    &--item {
+      position: relative;
+      &::after {
+        content: "";
+        width: 1rem;
+        height: 0.5rem;
+        position: absolute;
+        left: 0;
+        top: 1rem;
+        background-color: #e84139;
+        transform: scale(0, 0);
+        padding: 2rem 0;
+        transform-origin: 50% 50%;
+        transition: transform 0.2s,
+          width 0.2s cubic-bezier(0.3, 0.09, 0.92, 1.13);
+      }
+      &:hover::after {
+        transform: scale(1, 0.1);
+        width: 100%;
+        color: white;
+      }
+    }
   }
 }
