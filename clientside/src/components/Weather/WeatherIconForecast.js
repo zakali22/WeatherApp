@@ -14,8 +14,8 @@ import Wind from "../../img/weather/windy.svg";
 
 class WeatherIcon extends Component {
   renderIcon() {
-    const temp = this.props.weather.data.tempRange.temp;
-    const desc = this.props.weather.data.weather;
+    const temp = this.props.temp;
+    const desc = this.props.description;
     if (temp <= 19) {
       if (desc.includes("few")) {
         return <img src={CloudySun} />;

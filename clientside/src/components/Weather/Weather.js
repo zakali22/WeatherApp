@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import HeaderWeather from "../Navigation/HeaderWeather";
 import WeatherIcon from "./WeatherIcon";
+import WeatherIconForecast from "./WeatherIconForecast";
 import { connect } from "react-redux";
 import * as actions from "../../actions/weatherActions";
 
@@ -38,7 +39,29 @@ class Weather extends Component {
                 <WeatherIcon />
               </div>
             </div>
-            <div className="weather--data__forecast" />
+            <div className="weather--data__forecast">
+              {this.props.weather.data.forecasts.map(forecast => {
+                return (
+                  <div className="forecast--container">
+                    <h4>{forecast.date}</h4>
+                    <div className="forecast--logo">
+                      <WeatherIconForecast
+                        temp={forecast.temperature.temp}
+                        description={forecast.weather}
+                      />
+                    </div>
+                    <div className="forecast--data">
+                      <p>
+                        {forecast.temperature.temp_min} <span>&deg;</span>
+                      </p>
+                      <p>
+                        {forecast.temperature.temp_max} <span>&deg;</span>
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       );

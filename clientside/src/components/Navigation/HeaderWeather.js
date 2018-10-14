@@ -34,7 +34,7 @@ class HeaderWeather extends Component {
               type="text"
               name="searchString"
               className="header__searchContainer--input"
-              placeholder="Search a weather"
+              placeholder="Search a city's weather"
               autoComplete="off"
               onChange={this.handleChange}
               value={this.state.search}
