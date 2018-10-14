@@ -20,7 +20,13 @@ module.exports = app => {
       }),
       axios({
         method: "GET",
-        url: `https://api.unsplash.com/search/photos?page=1&orientation=landscape&query=${city}&client_id=${
+        url: `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&APPID=${
+          keys.weatherID
+        }`
+      }),
+      axios({
+        method: "GET",
+        url: `https://api.unsplash.com/search/photos?page=1&orientation=landscape&query=${city}+city+building&client_id=${
           keys.unsplashID
         }`
       })
@@ -28,7 +34,9 @@ module.exports = app => {
     Promise.all(requests)
       .then(data => {
         const weatherResponse = data[0].data;
-        const imageResponse = data[1].data.results[0];
+        const forecastResponse = data[1].data;
+
+        const imageResponse = data[2].data.results[2];
         const weatherID = {};
         weatherID.location = {
           city: weatherResponse.name,
@@ -41,54 +49,35 @@ module.exports = app => {
           temp_min: Math.round(weatherResponse.main.temp_min),
           temp_max: Math.round(weatherResponse.main.temp_max)
         };
+        weatherID.forecasts = [];
+        const days = [
+          forecastResponse.list.slice(0, 8),
+          forecastResponse.list.slice(8, 16),
+          forecastResponse.list.slice(16, 24),
+          forecastResponse.list.slice(24, 32),
+          forecastResponse.list.slice(32, 40)
+        ];
+        days.map(day => {
+          const dayID = {
+            temperature: {
+              temp: Math.round(day[0].main.temp),
+              temp_min: Math.round(day[0].main.temp_min),
+              temp_max: Math.round(day[0].main.temp_max)
+            },
+            weather: day[0].weather[0].description,
+            date: moment(day[0].dt * 1000).format("dddd")
+          };
+          weatherID.forecasts.push(dayID);
+        });
         weatherID.image = imageResponse.urls.regular;
         return weatherID;
       })
       .then(data => {
         console.log(data);
-
         res.send(data);
       })
       .catch(err => {
         console.log(err);
       });
-  });
-  // FORECAST 16 DAYS
-  app.get("/api/getWeatherForecast/:city", (req, res) => {
-    axios({
-      method: "GET",
-      url: `https://api.openweathermap.org/data/2.5/forecast?q=${
-        req.params.city
-      }&APPID=${keys.weatherID}`
-    }).then(response => {
-      const data = response.data;
-      const weatherID = {};
-      weatherID.location = {
-        city: data.city.name,
-        country: data.city.country,
-        population: data.city.population
-      };
-      weatherID.forecasts = [];
-      const days = [
-        data.list.slice(0, 8),
-        data.list.slice(8, 16),
-        data.list.slice(16, 24),
-        data.list.slice(24, 32),
-        data.list.slice(32, 40)
-      ];
-      days.map(day => {
-        const dayID = {
-          temperature: {
-            temp: day[0].main.temp,
-            temp_min: day[0].main.temp_min,
-            temp_max: day[0].main.temp_max
-          },
-          weather: day[0].weather[0].description,
-          date: moment(day[0].dt * 1000).format("dddd Do")
-        };
-        weatherID.forecasts.push(dayID);
-      });
-      res.send(weatherID);
-    });
   });
 };
