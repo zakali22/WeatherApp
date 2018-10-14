@@ -4,12 +4,12 @@ const moment = require("moment");
 
 module.exports = app => {
   // CURRENT WEATHER
-  app.get("/api/getCurrentWeather/:city", (req, res) => {
-    console.log(req.params.city);
+  app.post("/api/getCurrentWeather/:city", (req, res) => {
+    console.log(req.body.city_name);
     axios({
       method: "GET",
       url: `https://api.openweathermap.org/data/2.5/weather?q=${
-        req.params.city
+        req.body.city_name
       }&units=metric&APPID=${keys.weatherID}`
     }).then(response => {
       const weatherID = {};
@@ -28,7 +28,7 @@ module.exports = app => {
       axios({
         method: "GET",
         url: `https://api.unsplash.com/search/photos?page=1&orientation=landscape&query=${
-          req.params.city
+          req.body.city_name
         }&client_id=${keys.unsplashID}`
       }).then(response => {
         console.log(response.data.results[0].urls.regular);
