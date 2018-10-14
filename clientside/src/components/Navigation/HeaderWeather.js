@@ -52,7 +52,7 @@ class HeaderWeather extends Component {
           <Link to={"/weather"} className="header__nav--link">
             <div className="header__nav--item">weather</div>
           </Link>
-          <Link to={"#"} className="header__nav--link">
+          <Link to={"/news"} className="header__nav--link">
             <div className="header__nav--item">news</div>
           </Link>
         </nav>

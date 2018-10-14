@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import Jumbotron from "./Homepage/Jumbotron";
 import Weather from "./Weather/Weather";
+import News from "./News/News";
 
 import { connect } from "react-redux";
 import * as actions from "../actions/weatherActions";
@@ -20,6 +21,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Jumbotron} />
             <Route exact path="/weather" component={Weather} />
+            <Route exact path="/news" component={News} />
           </Switch>
         </Router>
       </div>
