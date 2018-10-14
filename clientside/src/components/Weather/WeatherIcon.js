@@ -44,7 +44,6 @@ class WeatherIcon extends Component {
   }
 
   render() {
-    console.log(this.props.weather.data.image);
     return <React.Fragment>{this.renderIcon()}</React.Fragment>;
   }
 }

@@ -4,38 +4,54 @@ const moment = require("moment");
 
 module.exports = app => {
   // CURRENT WEATHER
-  app.post("/api/getCurrentWeather/:city", (req, res) => {
+  app.post("/api/getCurrentWeather", (req, res) => {
     console.log(req.body.city_name);
-    axios({
-      method: "GET",
-      url: `https://api.openweathermap.org/data/2.5/weather?q=${
-        req.body.city_name
-      }&units=metric&APPID=${keys.weatherID}`
-    }).then(response => {
-      const weatherID = {};
-      weatherID.location = {
-        city: response.data.name,
-        country: response.data.sys.country
-      };
-      weatherID.weather = response.data.weather[0].description;
-      weatherID.time = moment().format("dddd h:mm a");
-      weatherID.tempRange = {
-        temp: Math.round(response.data.main.temp),
-        temp_min: Math.round(response.data.main.temp_min),
-        temp_max: Math.round(response.data.main.temp_max)
-      };
+    let city = req.body.city_name;
+    if (req.body.city_name === "" || req.body.city_name === undefined) {
+      city = "London";
+    }
 
+    const requests = [
       axios({
         method: "GET",
-        url: `https://api.unsplash.com/search/photos?page=1&orientation=landscape&query=${
-          req.body.city_name
-        }&client_id=${keys.unsplashID}`
-      }).then(response => {
-        console.log(response.data.results[0].urls.regular);
-        weatherID.image = response.data.results[0].urls.regular;
-        res.send(weatherID);
+        url: `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=${
+          keys.weatherID
+        }`
+      }),
+      axios({
+        method: "GET",
+        url: `https://api.unsplash.com/search/photos?page=1&orientation=landscape&query=${city}&client_id=${
+          keys.unsplashID
+        }`
+      })
+    ];
+    Promise.all(requests)
+      .then(data => {
+        const weatherResponse = data[0].data;
+        const imageResponse = data[1].data.results[0];
+        const weatherID = {};
+        weatherID.location = {
+          city: weatherResponse.name,
+          country: weatherResponse.sys.country
+        };
+        weatherID.weather = weatherResponse.weather[0].description;
+        weatherID.time = moment().format("dddd h:mm a");
+        weatherID.tempRange = {
+          temp: Math.round(weatherResponse.main.temp),
+          temp_min: Math.round(weatherResponse.main.temp_min),
+          temp_max: Math.round(weatherResponse.main.temp_max)
+        };
+        weatherID.image = imageResponse.urls.regular;
+        return weatherID;
+      })
+      .then(data => {
+        console.log(data);
+
+        res.send(data);
+      })
+      .catch(err => {
+        console.log(err);
       });
-    });
   });
   // FORECAST 16 DAYS
   app.get("/api/getWeatherForecast/:city", (req, res) => {

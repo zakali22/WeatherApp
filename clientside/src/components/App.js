@@ -9,7 +9,9 @@ import * as actions from "../actions/weatherActions";
 
 class App extends Component {
   componentDidMount() {
-    this.props.getWeather();
+    if (!this.props.weather.data) {
+      this.props.getWeather();
+    }
   }
   render() {
     return (
