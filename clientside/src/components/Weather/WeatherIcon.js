@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 // Hot
-import SunnyClouds from "../../img/weather/sunnycloud.svg";
-import SunnyRain from "../../img/weather/sunnyrain.svg";
+import SunnyClouds from "../../img/weather/sun-1.svg";
+import SunnyRain from "../../img/weather/rain-10.svg";
 import Sunny from "../../img/weather/sun.svg";
 // Cold
 import Cloudy from "../../img/weather/cloud.svg";
-import CloudySun from "../../img/weather/sunnycloud.svg";
-import CloudyRain from "../../img/weather/rain.svg";
+import CloudySun from "../../img/weather/cloud-1.svg";
+import CloudyRain from "../../img/weather/rain-3.svg";
 import Storm from "../../img/weather/storm.svg";
-import Snow from "../../img/weather/snowflake.svg";
+import Snow from "../../img/weather/snowing-1.svg";
 import Wind from "../../img/weather/windy.svg";
 
 class WeatherIcon extends Component {
@@ -44,6 +44,7 @@ class WeatherIcon extends Component {
   }
 
   render() {
+    console.log(this.props.weather.data.image);
     return <React.Fragment>{this.renderIcon()}</React.Fragment>;
   }
 }

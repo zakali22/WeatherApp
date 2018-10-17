@@ -1,16 +1,81 @@
-<?xml version="1.0"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 496 496" style="enable-background:new 0 0 496 496;" xml:space="preserve" width="512px" height="512px" class=""><g><g>
+style="fill:white" <?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 496 496" style="enable-background:new 0 0 496 496;" xml:space="preserve">
+<g>
 	<g>
 		<g>
-			<path d="M88,304h312c52.936,0,96-43.064,96-96c0-47.568-35.536-88.072-82.024-94.904C402.968,48.184,346.456,0,280,0     c-60.16,0-112.6,39.232-129.952,96.272c-26.728-2.344-51.504,10.264-65.904,31.816C37.4,130.112,0,168.768,0,216     C0,264.52,39.48,304,88,304z M87.688,143.992l5.536,0.04l2.312-3.992C105.544,122.744,124.112,112,144,112     c3.352,0,6.856,0.344,10.416,1.008l7.424,1.4l1.824-7.336C176.96,53.456,224.8,16,280,16c60.504,0,111.672,45.28,119.008,105.32     l0.56,4.552C399.84,129.216,400,132.584,400,136c0,66.168-53.832,120-120,120v16c74.992,0,136-61.008,136-136     c0-2.128-0.176-4.2-0.272-6.296C452.432,137.088,480,169.768,480,208c0,44.112-35.888,80-80,80H88c-39.696,0-72-32.296-72-72     C16,176.296,48.304,144,87.688,143.992z" data-original="#000000" class="active-path" data-old_color="#FBFAFA" fill="#FBFBFB"/>
-			<path d="M432,360c0-22.056-17.944-40-40-40c-22.056,0-40,17.944-40,40v8h16v-8c0-13.232,10.768-24,24-24s24,10.768,24,24     s-10.768,24-24,24H24v16h368C414.056,400,432,382.056,432,360z" data-original="#000000" class="active-path" data-old_color="#FBFAFA" fill="#FBFBFB"/>
-			<path d="M456,416H88v16h368c13.232,0,24,10.768,24,24s-10.768,24-24,24s-24-10.768-24-24v-8h-16v8c0,22.056,17.944,40,40,40     c22.056,0,40-17.944,40-40C496,433.944,478.056,416,456,416z" data-original="#000000" class="active-path" data-old_color="#FBFAFA" fill="#FBFBFB"/>
-			<rect x="320" y="352" width="16" height="16" data-original="#000000" class="active-path" data-old_color="#FBFAFA" fill="#FBFBFB"/>
-			<rect x="288" y="352" width="16" height="16" data-original="#000000" class="active-path" data-old_color="#FBFAFA" fill="#FBFBFB"/>
-			<rect x="256" y="352" width="16" height="16" data-original="#000000" class="active-path" data-old_color="#FBFAFA" fill="#FBFBFB"/>
-			<rect x="384" y="448" width="16" height="16" data-original="#000000" class="active-path" data-old_color="#FBFAFA" fill="#FBFBFB"/>
-			<rect x="352" y="448" width="16" height="16" data-original="#000000" class="active-path" data-old_color="#FBFAFA" fill="#FBFBFB"/>
-			<rect x="320" y="448" width="16" height="16" data-original="#000000" class="active-path" data-old_color="#FBFAFA" fill="#FBFBFB"/>
+			<path style="fill:white" d="M413.968,118.948C402.968,54.036,346.464,5.852,280,5.852c-60.16,0-112.6,39.232-129.944,96.272
+				c-2.048-0.184-4.072-0.272-6.056-0.272c-24.032,0-46.56,12.184-59.856,32.08C37.4,135.964,0,174.62,0,221.852
+				c0,48.52,39.48,88,88,88v-16c-39.704,0-72-32.304-72-72s32.296-72,71.688-72.008l5.536,0.04l2.304-3.992
+				c10.008-17.296,28.592-28.04,48.472-28.04c3.352,0,6.856,0.336,10.424,1.008l7.424,1.4l1.824-7.336
+				C176.96,59.3,224.8,21.852,280,21.852c60.512,0,111.672,45.28,119.008,105.32l0.56,4.592c0.272,3.328,0.432,6.688,0.432,10.088
+				c0,66.168-53.832,120-120,120v16c74.992,0,136-61.008,136-136c0-2.12-0.176-4.2-0.272-6.296
+				C452.432,142.94,480,175.62,480,213.852c0,44.112-35.888,80-80,80v16c52.936,0,96-43.064,96-96
+				C496,166.276,460.464,125.78,413.968,118.948z"/>
+			<rect style="fill:white" x="104.023" y="307.96" transform="matrix(0.8944 0.4472 -0.4472 0.8944 157.5498 -15.6973)" width="16" height="35.775"/>
+
+				<rect style="fill:white" x="79.981" y="355.987" transform="matrix(-0.8944 -0.4472 0.4472 -0.8944 -0.5291 747.6239)" width="15.999" height="35.775"/>
+
+				<rect style="fill:white" x="56.019" y="403.958" transform="matrix(-0.8944 -0.4472 0.4472 -0.8944 -67.3761 827.7858)" width="15.999" height="35.775"/>
+
+				<rect style="fill:white" x="31.978" y="451.961" transform="matrix(-0.8944 -0.4472 0.4472 -0.8944 -134.3881 907.9729)" width="16" height="35.775"/>
+
+				<rect style="fill:white" x="150.098" y="317.849" transform="matrix(0.4472 -0.8944 0.8944 0.4472 -198.5879 330.3757)" width="35.775" height="16"/>
+
+				<rect style="fill:white" x="135.984" y="355.965" transform="matrix(-0.8944 -0.4472 0.4472 -0.8944 105.5769 772.6271)" width="16" height="35.775"/>
+
+				<rect style="fill:white" x="111.983" y="403.952" transform="matrix(-0.8944 -0.4472 0.4472 -0.8944 38.6449 852.8013)" width="15.999" height="35.775"/>
+
+				<rect style="fill:white" x="87.981" y="451.963" transform="matrix(-0.8944 -0.4472 0.4472 -0.8944 -28.2956 933.0211)" width="15.999" height="35.775"/>
+
+				<rect style="fill:white" x="311.984" y="307.973" transform="matrix(0.8944 0.4472 -0.4472 0.8944 179.5092 -108.6988)" width="16" height="35.775"/>
+
+				<rect style="fill:white" x="287.983" y="355.952" transform="matrix(-0.8944 -0.4472 0.4472 -0.8944 393.5303 840.5787)" width="15.999" height="35.775"/>
+
+				<rect style="fill:white" x="263.989" y="404.003" transform="matrix(-0.8944 -0.4472 0.4472 -0.8944 326.587 920.8778)" width="15.999" height="35.775"/>
+
+				<rect style="fill:white" x="239.979" y="451.966" transform="matrix(-0.8944 -0.4472 0.4472 -0.8944 259.6536 1001.0031)" width="16" height="35.775"/>
+
+				<rect style="fill:white" x="368.003" y="307.974" transform="matrix(-0.8944 -0.4472 0.4472 -0.8944 566.5801 785.4752)" width="15.999" height="35.775"/>
+
+				<rect style="fill:white" x="343.962" y="355.969" transform="matrix(-0.8944 -0.4472 0.4472 -0.8944 499.5718 865.6465)" width="16" height="35.775"/>
+			<rect style="fill:white" x="320" y="403.997" transform="matrix(-0.8944 -0.4472 0.4472 -0.8944 432.6999 945.9146)" width="16" height="35.775"/>
+
+				<rect style="fill:white" x="295.959" y="451.968" transform="matrix(-0.8944 -0.4472 0.4472 -0.8944 365.7005 1026.0409)" width="15.999" height="35.775"/>
+			<polygon style="fill:white" points="198.136,389.852 238.856,321.972 225.144,313.732 169.864,405.852 217.432,405.852 169.248,481.556 
+				182.752,490.148 246.568,389.852 			"/>
 		</g>
 	</g>
-</g></g> </svg>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
