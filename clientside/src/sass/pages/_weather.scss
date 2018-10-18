@@ -44,13 +44,15 @@
     height: 20rem;
     z-index: 1;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 0 3rem;
     align-items: center;
+
     &__today {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       flex: 0 1 20%;
+
       .today--logo {
         img {
           width: 10rem;
@@ -64,6 +66,39 @@
       }
       h2 {
         margin-top: 0;
+        line-height: 2.5rem;
+      }
+    }
+    &__forecast {
+      display: flex;
+
+      flex: 1;
+      justify-content: center;
+      align-items: center;
+      .forecast--container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 3rem;
+        & > * {
+          margin: 0.5rem;
+        }
+        .forecast--logo {
+          img {
+            width: 4rem;
+            height: 100%;
+            fill: white;
+          }
+        }
+        .forecast--data {
+          display: flex;
+          justify-content: space-between;
+          p {
+            display: flex;
+            margin: 0 0.5rem;
+          }
+        }
       }
     }
   }
