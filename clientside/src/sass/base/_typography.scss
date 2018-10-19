@@ -4,7 +4,10 @@
   --white: #fff;
   --black: #000000;
   --grey: #999999;
+  --dark-grey: #262626;
   --light-blue: #90b0c8;
+  --light-grey: #d8d8d8;
+  --light-pink: #f87f73;
 }
 
 html {
@@ -25,7 +28,7 @@ body {
     &--link {
       font-size: 2rem;
       font-weight: 300;
-      font-family: "K2D", sans-serif;
+      font-family: "Lato", sans-serif;
     }
   }
 }
@@ -36,7 +39,9 @@ body {
       font-size: 5rem;
     }
     span {
-      color: var(--light-blue);
+      color: var(--light-pink);
+      font-family: "Lato", sans-serif;
+      font-weight: 300;
     }
   }
 }
@@ -64,6 +69,51 @@ body {
     h2 {
       text-transform: capitalize;
       font-weight: 100;
+    }
+  }
+}
+
+.news {
+  &__nav {
+    &__list {
+      &--item {
+        color: var(--grey);
+        text-transform: uppercase;
+        transition: all 0.1s ease-in-out;
+        cursor: pointer;
+        font-family: "K2D", sans-serif;
+        font-weight: 700;
+        &:hover {
+          color: var(--black);
+        }
+      }
+    }
+  }
+  &__articles {
+    color: var(--dark-grey);
+    &--item {
+      h1 {
+        line-height: 3.2rem;
+        font-size: 2rem;
+        font-family: "Source Sans Pro", sans-serif;
+        font-weight: 700;
+        margin: 0;
+      }
+      p:first-of-type {
+        font-size: 1.3rem;
+        text-transform: uppercase;
+        font-weight: 300;
+      }
+    }
+    &--author {
+      font-family: "Lato", sans-serif;
+      font-weight: 300;
+    }
+    &--content {
+      font-family: "Lato", sans-serif;
+      line-height: 2.5rem;
+      font-weight: 700;
+      color: var(--black);
     }
   }
 }

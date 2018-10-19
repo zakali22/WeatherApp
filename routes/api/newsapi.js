@@ -7,13 +7,18 @@ module.exports = app => {
   app.get("/api/latest-news", (req, res) => {
     newsapi.v2
       .topHeadlines({
-        language: "en"
+        language: "en",
+        pageSize: 100
       })
       .then(response => {
         const data = response.articles;
         const articles = [];
         data.map(article => {
-          if (article.content) {
+          if (
+            article.content &&
+            article.source !== "cnn" &&
+            article.source !== "The Jerusalem Post"
+          ) {
             const articleID = {
               source: article.source.name,
               author: article.author,
@@ -34,9 +39,10 @@ module.exports = app => {
 
   // GET BY CATEGORY
   app.get("/api/latest-news/:category", (req, res) => {
+    const category = req.params.category;
     newsapi.v2
       .topHeadlines({
-        category: req.params.category,
+        category: category,
         language: "en",
         country: "us"
       })
@@ -44,7 +50,7 @@ module.exports = app => {
         const data = response.articles;
         const articles = [];
         data.map(article => {
-          if (article.content) {
+          if (article.content && article.urlToImage) {
             const articleID = {
               source: article.source.name,
               author: article.author,
@@ -55,7 +61,6 @@ module.exports = app => {
               publishedAt: article.publishedAt,
               content: article.content
             };
-            console.log(articleID);
             articles.push(articleID);
           }
         });
@@ -64,10 +69,11 @@ module.exports = app => {
   });
 
   // SEARCH A TOPIC
-  app.get("/api/search-news/:search/:page", (req, res) => {
+  app.post("/api/search-news/:page", (req, res) => {
+    const searchTerm = req.body.searchTerm;
     newsapi.v2
       .everything({
-        q: req.params.search,
+        q: req.body.searchTerm,
         language: "en",
         sortBy: "relevancy",
         page: req.params.page

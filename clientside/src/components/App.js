@@ -6,12 +6,22 @@ import Weather from "./Weather/Weather";
 import News from "./News/News";
 
 import { connect } from "react-redux";
-import * as actions from "../actions/weatherActions";
+import { getWeather } from "../actions/weatherActions";
+import { getLatest } from "../actions/newsActions";
+
+const actions = {
+  getWeather,
+  getLatest
+};
 
 class App extends Component {
   componentDidMount() {
     if (!this.props.weather.data) {
       this.props.getWeather();
+    }
+
+    if (!this.props.news) {
+      this.props.getLatest();
     }
   }
   render() {
