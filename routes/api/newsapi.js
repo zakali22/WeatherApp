@@ -69,14 +69,13 @@ module.exports = app => {
   });
 
   // SEARCH A TOPIC
-  app.post("/api/search-news/:page", (req, res) => {
+  app.post("/api/search-news/", (req, res) => {
     const searchTerm = req.body.searchTerm;
     newsapi.v2
       .everything({
         q: req.body.searchTerm,
         language: "en",
-        sortBy: "relevancy",
-        page: req.params.page
+        sortBy: "relevancy"
       })
       .then(response => {
         const data = response.articles;
