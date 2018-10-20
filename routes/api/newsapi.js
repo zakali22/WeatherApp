@@ -38,13 +38,14 @@ module.exports = app => {
   });
 
   // GET BY CATEGORY
-  app.get("/api/latest-news/:category", (req, res) => {
+  app.get("/api/latest-news/:category/:pageNumber", (req, res) => {
     const category = req.params.category;
     newsapi.v2
       .topHeadlines({
         category: category,
         language: "en",
-        country: "us"
+        country: "us",
+        page: req.params.pageNumber
       })
       .then(response => {
         const data = response.articles;
