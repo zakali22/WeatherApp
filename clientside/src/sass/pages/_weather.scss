@@ -3,8 +3,10 @@
   flex-direction: column;
   height: 100vh;
   position: relative;
+  color: var(--white);
   .container {
     height: 100%;
+    background-color: orange;
     .weather--location {
       display: flex;
       flex-direction: column;
@@ -28,7 +30,7 @@
       position: absolute;
       top: 0;
       min-width: 100%;
-      min-height: 100%;
+      min-height: 100vh;
       z-index: -1;
       filter: saturate(2);
       -webkit-filter: saturate(2);
@@ -39,7 +41,7 @@
     position: absolute;
     top: 100vh;
     left: 0;
-    width: 100%;
+    width: 100vw;
     height: 20rem;
     z-index: 1;
     display: flex;
