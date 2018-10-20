@@ -25,42 +25,42 @@ class Weather extends Component {
               </div>
             </span>
             <img src={this.props.weather.data.image} />
-          </div>
-          <div className="weather--data">
-            <div className="weather--data__today">
-              <div className="today--weather">
-                <h1>
-                  {Math.round(this.props.weather.data.tempRange.temp)}{" "}
-                  <span>&deg;</span>
-                </h1>
-                <h2>{this.props.weather.data.weather}</h2>
+            <div className="weather--data">
+              <div className="weather--data__today">
+                <div className="today--weather">
+                  <h1>
+                    {Math.round(this.props.weather.data.tempRange.temp)}{" "}
+                    <span>&deg;</span>
+                  </h1>
+                  <h2>{this.props.weather.data.weather}</h2>
+                </div>
+                <div className="today--logo">
+                  <WeatherIcon />
+                </div>
               </div>
-              <div className="today--logo">
-                <WeatherIcon />
+              <div className="weather--data__forecast">
+                {this.props.weather.data.forecasts.map(forecast => {
+                  return (
+                    <div className="forecast--container">
+                      <h4>{forecast.date}</h4>
+                      <div className="forecast--logo">
+                        <WeatherIconForecast
+                          temp={forecast.temperature.temp}
+                          description={forecast.weather}
+                        />
+                      </div>
+                      <div className="forecast--data">
+                        <p>
+                          {forecast.temperature.temp_min} <span>&deg;</span>
+                        </p>
+                        <p>
+                          {forecast.temperature.temp_max} <span>&deg;</span>
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
-            </div>
-            <div className="weather--data__forecast">
-              {this.props.weather.data.forecasts.map(forecast => {
-                return (
-                  <div className="forecast--container">
-                    <h4>{forecast.date}</h4>
-                    <div className="forecast--logo">
-                      <WeatherIconForecast
-                        temp={forecast.temperature.temp}
-                        description={forecast.weather}
-                      />
-                    </div>
-                    <div className="forecast--data">
-                      <p>
-                        {forecast.temperature.temp_min} <span>&deg;</span>
-                      </p>
-                      <p>
-                        {forecast.temperature.temp_max} <span>&deg;</span>
-                      </p>
-                    </div>
-                  </div>
-                );
-              })}
             </div>
           </div>
         </div>
