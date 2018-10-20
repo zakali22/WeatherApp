@@ -10,7 +10,8 @@ const actions = {
 class News extends Component {
   state = {
     news: this.props.news.data,
-    pageNumber: 1
+    pageNumber: 1,
+    listItem: ""
   };
   static nav_list = [
     "general",
@@ -21,13 +22,17 @@ class News extends Component {
   ];
 
   latestCategory = list => {
-    this.props.getLatestCategory(list, this.state.pageNumber);
+    this.setState({
+      listItem: list
+    });
+    this.props.getLatestCategory(this.state.listItem, this.state.pageNumber);
   };
 
   loadMore = () => {
     this.setState({
       pageNumber: this.state.pageNumber++
     });
+    this.props.getLatestCategory(this.state.listItem, this.state.pageNumber);
   };
 
   componentDidUpdate() {
