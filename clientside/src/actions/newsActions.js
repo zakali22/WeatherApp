@@ -13,7 +13,7 @@ export const getLatest = () => async dispatch => {
 
 export const getLatestCategory = category => async dispatch => {
   const res = await axios.get(
-    `https://afternoon-ridge-59283.herokuapp.com//api/latest-news/${category}`
+    `https://afternoon-ridge-59283.herokuapp.com/api/latest-news/${category}`
   );
   console.log(res.data);
   dispatch({
