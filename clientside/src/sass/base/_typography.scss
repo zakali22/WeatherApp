@@ -75,6 +75,8 @@ body {
       font-weight: 700;
       padding: 0;
       line-height: 5rem;
+      background: var(--white);
+      padding: 3rem;
       @media only screen and (max-width: 83.63em) {
         font-size: 8rem;
         line-height: 8rem;
@@ -82,8 +84,6 @@ body {
       }
       @media only screen and (max-width: 45.63em) {
         font-size: 6.25rem;
-        background: var(--white);
-        padding: 2rem;
       }
       @media only screen and (max-width: 33.125em) {
         font-size: 3.75rem;
