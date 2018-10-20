@@ -39,6 +39,34 @@ require("./routes/api/newsapi")(app);
 // Other files
 require("./misc");
 
+process.env.PWD = process.cwd();
+
+// Conditional Production environment
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("clientside/build"));
+  const path = require("path");
+  app.get("/", (req, res) => {
+    res.sendFile(
+      path.resolve(process.env.PWD, "clientside", "build", "index.html")
+    );
+  });
+  app.get("/weather", (req, res) => {
+    res.sendFile(
+      path.resolve(process.env.PWD, "clientside", "build", "index.html")
+    );
+  });
+  app.get("/news", (req, res) => {
+    res.sendFile(
+      path.resolve(process.env.PWD, "clientside", "build", "index.html")
+    );
+  });
+  app.get("*", (req, res) => {
+    res.sendFile(
+      path.resolve(process.env.PWD, "clientside", "build", "index.html")
+    );
+  });
+}
+
 // PORT
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);
