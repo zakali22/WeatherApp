@@ -25,12 +25,12 @@ class News extends Component {
     this.setState({
       listItem: list
     });
-    this.props.getLatestCategory(this.state.listItem, this.state.pageNumber);
+    this.props.getLatestCategory(item, this.state.pageNumber);
   };
 
   loadMore = () => {
     this.setState({
-      pageNumber: this.state.pageNumber++
+      pageNumber: this.state.pageNumber + 1
     });
     this.props.getLatestCategory(this.state.listItem, this.state.pageNumber);
   };
