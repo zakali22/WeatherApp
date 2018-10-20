@@ -27,7 +27,7 @@ module.exports = app => {
               url: article.url,
               urlImage: article.urlToImage,
               publishedAt: article.publishedAt,
-              content: article.content
+              content: article.content.substring(0, article.content.length - 13)
             };
             console.log(articleID);
             articles.push(articleID);
@@ -59,7 +59,7 @@ module.exports = app => {
               url: article.url,
               urlImage: article.urlToImage,
               publishedAt: article.publishedAt,
-              content: article.content
+              content: article.content.substring(article.content.length - 13)
             };
             articles.push(articleID);
           }
@@ -91,7 +91,7 @@ module.exports = app => {
               url: article.url,
               urlImage: article.urlToImage,
               publishedAt: article.publishedAt,
-              content: article.content
+              content: article.content.substring(article.content.length - 13)
             };
             console.log(articleID);
             articles.push(articleID);
