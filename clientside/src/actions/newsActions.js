@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const getLatest = () => async dispatch => {
   const res = await axios.get(
-    "https://afternoon-ridge-59283.herokuapp.com//api/latest-news"
+    "https://afternoon-ridge-59283.herokuapp.com/api/latest-news"
   );
   console.log(res.data);
   dispatch({
@@ -24,7 +24,7 @@ export const getLatestCategory = category => async dispatch => {
 
 export const searchNews = (searchTerm, page) => async dispatch => {
   const res = await axios.post(
-    `https://afternoon-ridge-59283.herokuapp.com//api/search-news/${page}`,
+    `https://afternoon-ridge-59283.herokuapp.com/api/search-news/${page}`,
     {
       searchTerm
     }
