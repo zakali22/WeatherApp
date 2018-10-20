@@ -4,6 +4,10 @@
   height: 10rem;
   justify-content: space-between;
   padding-right: 3rem;
+  @media only screen and (max-width: 30.62em) {
+    padding-right: 5rem;
+  }
+
   &--overall {
     background: none;
   }
@@ -18,6 +22,7 @@
       padding: 1.3rem;
       border-radius: 10rem;
       transition: all 0.4s ease-in-out;
+
       &:focus {
         outline: none;
         width: 90%;
@@ -38,6 +43,9 @@
       border: none;
       cursor: pointer;
       z-index: 1;
+      @media only screen and (max-width: 32.19em) {
+        display: none;
+      }
     }
   }
   &__logo {

@@ -10,9 +10,23 @@
   --light-pink: #f87f73;
 }
 
+// Convert % to em divide by 16px
+
 html {
   // 1rem = 10px ~ 62.5%;
   font-size: 62.5%;
+  @media only screen and (max-width: 78.13em) {
+    // 1200px
+    font-size: 56.25%; //9px
+  }
+  @media only screen and (max-width: 56.25em) {
+    //900px
+    font-size: 50%; //8px
+  }
+  @media only screen and (max-width: 28.12em) {
+    //430px
+    font-size: 43.75%; //7px
+  }
 }
 
 body {
@@ -37,6 +51,9 @@ body {
   .container {
     h1 {
       font-size: 5rem;
+      @media only screen and (max-width: 68.75em) {
+        font-size: 4rem;
+      }
     }
     span {
       color: var(--light-pink);
@@ -57,6 +74,20 @@ body {
       font-family: "K2D", sans-serif;
       font-weight: 700;
       padding: 0;
+      line-height: 5rem;
+      @media only screen and (max-width: 83.63em) {
+        font-size: 8rem;
+        line-height: 8rem;
+        text-align: center;
+      }
+      @media only screen and (max-width: 45.63em) {
+        font-size: 6.25rem;
+        background: var(--white);
+        padding: 2rem;
+      }
+      @media only screen and (max-width: 33.125em) {
+        font-size: 3.75rem;
+      }
     }
   }
   &--data {

@@ -47,12 +47,18 @@
     justify-content: space-around;
     padding: 0 3rem;
     align-items: center;
-
+    @media only screen and (max-width: 48.13em) {
+      flex-direction: column;
+      height: 38rem;
+    }
     &__today {
       display: flex;
       justify-content: center;
+      align-items: center;
       flex: 0 1 20%;
-
+      @media only screen and (max-width: 48.13em) {
+        margin-top: 5rem;
+      }
       .today--logo {
         img {
           width: 10rem;
@@ -75,12 +81,21 @@
       flex: 1;
       justify-content: center;
       align-items: center;
+      @media only screen and (max-width: 48.13em) {
+        margin-top: 10rem;
+      }
+      @media only screen and (max-width: 37.5em) {
+        align-self: flex-start;
+      }
       .forecast--container {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         margin: 3rem;
+        @media only screen and (max-width: 37.5em) {
+          margin: 1rem;
+        }
         & > * {
           margin: 0.5rem;
         }
