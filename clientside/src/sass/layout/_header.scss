@@ -2,13 +2,11 @@
   display: flex;
   align-items: center;
   height: 10rem;
+  width: 100%;
   justify-content: space-between;
   padding-right: 3rem;
-  @media only screen and (max-width: 30.62em) {
-    padding-right: 5rem;
-  }
-
-  &--overall {
+  &--overall,
+  &--news {
     background: #292423;
   }
   &__searchContainer {
@@ -55,6 +53,10 @@
     justify-content: space-between;
     align-items: center;
     flex: 0 0 10%;
+    @media only screen and (max-width: 30.62em) {
+      padding-right: 5rem;
+    }
+
     &--link {
       padding: 2rem;
     }
