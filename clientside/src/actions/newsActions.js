@@ -33,6 +33,7 @@ export const searchNews = (searchTerm, page) => async dispatch => {
     data: res.data,
     searchedTerm: searchTerm
   };
+  console.log(result);
   dispatch({
     type: "SEARCH_TERM",
     payload: result
