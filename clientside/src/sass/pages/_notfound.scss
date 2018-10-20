@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css?family=Teko:700");
+
+.NotFound {
+  background: #f87f73;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .container {
+    display: flex;
+  }
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: "Teko", sans-serif;
+    & > * {
+      margin: 3rem;
+    }
+    h1 {
+      font-size: 10rem;
+    }
+    h3 {
+      font-size: 3rem;
+    }
+  }
+}
