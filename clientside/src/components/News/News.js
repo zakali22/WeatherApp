@@ -34,6 +34,7 @@ class News extends Component {
     this.setState({
       pageNumber: pageNumber
     });
+    console.log(this.state.pageNumber);
   };
 
   componentDidUpdate() {
