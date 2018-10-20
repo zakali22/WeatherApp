@@ -60,6 +60,11 @@ if (process.env.NODE_ENV === "production") {
       path.resolve(process.env.PWD, "clientside", "build", "index.html")
     );
   });
+  app.get("/news/*", (req, res) => {
+    res.sendFile(
+      path.resolve(process.env.PWD, "clientside", "build", "index.html")
+    );
+  });
 }
 
 // PORT
