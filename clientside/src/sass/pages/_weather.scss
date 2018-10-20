@@ -1,11 +1,10 @@
 .weather {
   display: flex;
   flex-direction: column;
-  height: 140vh;
+  height: 100vh;
   position: relative;
   .container {
     height: 100vh;
-
     .weather--location {
       display: flex;
       flex-direction: column;

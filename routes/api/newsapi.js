@@ -17,7 +17,8 @@ module.exports = app => {
           if (
             article.content &&
             article.source !== "cnn" &&
-            article.source !== "The Jerusalem Post"
+            article.source !== "The Jerusalem Post" &&
+            article.urlToImage
           ) {
             const articleID = {
               source: article.source.name,
