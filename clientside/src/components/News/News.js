@@ -1,17 +1,19 @@
 import React, { Component } from "react";
 import HeaderNews from "../Navigation/HeaderNews";
 import { connect } from "react-redux";
-import { getLatestCategory } from "../../actions/newsActions";
+import ReactDOM from "react-dom";
+import { getLatestCategory, searchNews } from "../../actions/newsActions";
 
 const actions = {
-  getLatestCategory
+  getLatestCategory,
+  searchNews
 };
 
 class News extends Component {
   state = {
     news: this.props.news.data,
-    pageNumber: 1,
-    listItem: ""
+    pageNumber: 2,
+    search: this.props.news.searchTerm
   };
   static nav_list = [
     "general",
@@ -22,22 +24,20 @@ class News extends Component {
   ];
 
   latestCategory = list => {
-    this.setState({
-      listItem: list
-    });
-    this.props.getLatestCategory(list, this.state.pageNumber);
+    this.props.getLatestCategory(list);
   };
 
   loadMore = () => {
+    let pageNumber = this.state.pageNumber;
+    this.props.searchNews(this.state.search, this.state.pageNumber);
+    pageNumber++;
     this.setState({
-      pageNumber: this.state.pageNumber + 1
+      pageNumber: pageNumber
     });
-    console.log(this.state.listItem, this.state.pageNumber);
-    this.props.getLatestCategory(this.state.listItem, this.state.pageNumber);
   };
 
   componentDidUpdate() {
-    this.renderOnData();
+    ReactDOM.findDOMNode(this).scrollIntoView();
   }
 
   renderOnData() {

@@ -11,7 +11,8 @@ export default function(state = null, action) {
       };
     case "SEARCH_TERM":
       return {
-        data: action.payload
+        data: action.payload.data,
+        searchTerm: action.payload.searchedTerm
       };
     default:
       return state;

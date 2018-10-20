@@ -38,14 +38,13 @@ module.exports = app => {
   });
 
   // GET BY CATEGORY
-  app.get("/api/latest-news/:category/:pageNumber", (req, res) => {
+  app.get("/api/latest-news/:category", (req, res) => {
     const category = req.params.category;
     newsapi.v2
       .topHeadlines({
         category: category,
         language: "en",
-        country: "us",
-        page: req.params.pageNumber
+        country: "us"
       })
       .then(response => {
         const data = response.articles;
@@ -70,13 +69,14 @@ module.exports = app => {
   });
 
   // SEARCH A TOPIC
-  app.post("/api/search-news/", (req, res) => {
+  app.post("/api/search-news/:pageNumber", (req, res) => {
     const searchTerm = req.body.searchTerm;
     newsapi.v2
       .everything({
         q: req.body.searchTerm,
         language: "en",
-        sortBy: "relevancy"
+        sortBy: "relevancy",
+        page: req.params.pageNumber
       })
       .then(response => {
         const data = response.articles;

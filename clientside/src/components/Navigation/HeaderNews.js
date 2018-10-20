@@ -19,7 +19,7 @@ class HeaderNews extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    this.props.searchNews(this.state.search);
+    this.props.searchNews(this.state.search, 1);
   };
   render() {
     return (
