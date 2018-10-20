@@ -6,7 +6,7 @@
   justify-content: space-between;
   padding-right: 3rem;
   @media only screen and (max-width: 30.62em) {
-    padding-right: 5rem;
+    justify-content: flex-start;
   }
 
   &--overall,
