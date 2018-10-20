@@ -32,6 +32,7 @@ class News extends Component {
     this.setState({
       pageNumber: this.state.pageNumber + 1
     });
+    console.log(this.state.listItem, this.state.pageNumber);
     this.props.getLatestCategory(this.state.listItem, this.state.pageNumber);
   };
 
