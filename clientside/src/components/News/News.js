@@ -26,7 +26,7 @@ class News extends Component {
 
   loadMore = () => {
     this.setState({
-      pageNumber: pageNumber++
+      pageNumber: this.state.pageNumber++
     });
   };
 
