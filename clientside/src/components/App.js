@@ -17,7 +17,7 @@ const actions = {
 
 class App extends Component {
   componentDidMount() {
-    if (!this.props.weather) {
+    if (!this.props.weather.data) {
       this.props.getWeather();
     }
 

@@ -9,7 +9,7 @@ const actions = {
 
 class News extends Component {
   state = {
-    news: this.props.news
+    news: this.props.news.data
   };
   static nav_list = [
     "general",

@@ -7,7 +7,7 @@ import * as actions from "../../actions/weatherActions";
 
 class Weather extends Component {
   state = {
-    weather: this.props.weather.data
+    weather: this.props.weather
   };
 
   renderOnData() {
