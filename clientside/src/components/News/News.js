@@ -9,7 +9,8 @@ const actions = {
 
 class News extends Component {
   state = {
-    news: this.props.news.data
+    news: this.props.news.data,
+    pageNumber: 1
   };
   static nav_list = [
     "general",
@@ -20,8 +21,18 @@ class News extends Component {
   ];
 
   latestCategory = list => {
-    this.props.getLatestCategory(list);
+    this.props.getLatestCategory(list, this.state.pageNumber);
   };
+
+  loadMore = () => {
+    this.setState({
+      pageNumber: pageNumber++
+    });
+  };
+
+  componentDidUpdate() {
+    this.renderOnData();
+  }
 
   renderOnData() {
     if (this.props.news) {
@@ -67,6 +78,9 @@ class News extends Component {
                   );
                 })}
               </div>
+            </div>
+            <div className="load-more">
+              <span onClick={this.loadMore}>Load more</span>
             </div>
           </div>
         </div>
