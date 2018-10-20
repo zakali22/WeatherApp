@@ -12,7 +12,7 @@ const actions = {
 class News extends Component {
   state = {
     news: this.props.news.data,
-    pageNumber: 2,
+    pageNumber: 1,
     search: this.props.news.searchTerm
   };
   static nav_list = [
