@@ -8,6 +8,9 @@ const actions = {
 };
 
 class News extends Component {
+  state = {
+    news: this.props.news
+  };
   static nav_list = [
     "general",
     "technology",
@@ -21,7 +24,7 @@ class News extends Component {
   };
 
   renderOnData() {
-    if (this.props.news.data) {
+    if (this.props.news) {
       return (
         <div className="news">
           <HeaderNews className="header header--news" />
