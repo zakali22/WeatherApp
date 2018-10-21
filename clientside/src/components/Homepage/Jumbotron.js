@@ -9,7 +9,7 @@ class Jumbotron extends Component {
         <Header className="header" />
         <div className="container">
           <h1>
-            An all-in-one personalize <span>weather & news</span> web app
+            An all-in-one personalized <span>weather & news</span> web app
           </h1>
         </div>
       </div>

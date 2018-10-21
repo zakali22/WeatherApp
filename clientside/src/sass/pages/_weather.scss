@@ -6,9 +6,11 @@
   position: relative;
   color: var(--white);
   background-color: orange;
+  padding-right: 3rem;
   .container {
     height: 100%;
     width: 100%;
+
     .weather--location {
       display: flex;
       flex-direction: column;
