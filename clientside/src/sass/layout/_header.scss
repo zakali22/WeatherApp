@@ -62,6 +62,7 @@
     }
     &--item {
       position: relative;
+
       &::after {
         content: "";
         width: 100%;
@@ -99,7 +100,7 @@
     }
   }
   .bm-burger-bars {
-    background: var(--light-pink);
+    background: var(--white);
     height: 10% !important;
     border-radius: 3px;
     &:nth-child(2) {
@@ -116,11 +117,16 @@
     top: 0;
   }
   .bm-morph-shape {
-    fill: var(--light-pink);
+    fill: var(--medium-grey);
   }
   .bm-menu {
-    background: var(--light-pink);
-    padding: 2.5em 1.5em 0;
+    background: var(--medium-grey);
+    padding: 5rem 0 5rem 3rem;
+    color: var(--white);
     font-size: 1.15em;
+    border-left: 1px solid var(--light-pink);
+  }
+  .bm-overlay {
+    width: 0% !important;
   }
 }
