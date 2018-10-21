@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Logo from "../../img/Logo.svg";
 import { Link } from "react-router-dom";
 import SearchIcon from "../../img/search.svg";
-import { bubble as Menu } from "react-burger-menu";
+import { stack as Menu } from "react-burger-menu";
 
 import { connect } from "react-redux";
 import * as actions from "../../actions/newsActions";

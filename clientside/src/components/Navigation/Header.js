@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Logo from "../../img/Logo.svg";
 import { Link } from "react-router-dom";
-import { bubble as Menu } from "react-burger-menu";
+import { stack as Menu } from "react-burger-menu";
 
 class Header extends Component {
   render() {
