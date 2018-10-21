@@ -51,7 +51,12 @@ module.exports = app => {
         const data = response.articles;
         const articles = [];
         data.map(article => {
-          if (article.content && article.urlToImage) {
+          if (
+            article.content &&
+            article.source !== "cnn" &&
+            article.source !== "The Jerusalem Post" &&
+            article.urlToImage
+          ) {
             const articleID = {
               source: article.source.name,
               author: article.author,
@@ -60,7 +65,7 @@ module.exports = app => {
               url: article.url,
               urlImage: article.urlToImage,
               publishedAt: article.publishedAt,
-              content: article.content.substring(article.content.length - 13)
+              content: article.content.substring(0, article.content.length - 13)
             };
             articles.push(articleID);
           }
@@ -83,7 +88,12 @@ module.exports = app => {
         const data = response.articles;
         const articles = [];
         data.map(article => {
-          if (article.content) {
+          if (
+            article.content &&
+            article.source !== "cnn" &&
+            article.source !== "The Jerusalem Post" &&
+            article.urlToImage
+          ) {
             const articleID = {
               source: article.source.name,
               author: article.author,
@@ -92,12 +102,12 @@ module.exports = app => {
               url: article.url,
               urlImage: article.urlToImage,
               publishedAt: article.publishedAt,
-              content: article.content.substring(article.content.length - 13)
+              content: article.content.substring(0, article.content.length - 13)
             };
-            console.log(articleID);
             articles.push(articleID);
           }
         });
+        console.log(articles);
         res.send(articles);
       });
   });
