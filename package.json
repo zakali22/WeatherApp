@@ -10,6 +10,10 @@
     "start": "node server.js",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix clientside && npm run build --prefix clientside"
   },
+  "engines": {
+    "node": "*",
+    "npm": "*"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zakali22/WeatherApp.git"
